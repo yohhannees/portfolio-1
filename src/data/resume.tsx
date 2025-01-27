@@ -99,16 +99,16 @@ export const DATA = {
       badges: [],
       location: "Fulltime",
       title: "Project Manager - Backend Engineer",
-      logoUrl: "/atomic.png",
+      logoUrl: "https://x.com/endubiswallet/photo",
       start: "May 2021",
       end: "Oct 2022",
       description:
         "Implemented the Bitcoin discreet log contract (DLC) protocol specifications as an open source Typescript SDK. Dockerized all microservices and setup production kubernetes cluster. Architected a data lake using AWS S3 and Athena for historical backtesting of bitcoin trading strategies. Built a mobile app using react native and typescript.",
     },
     {
-      company: "Shopify",
+      company: "SoundRig",
       badges: [],
-      href: "https://shopify.com",
+      href: "https://soundrig.io",
       location: "Remote",
       title: "Software Engineer",
       logoUrl: "/shopify.svg",
@@ -118,7 +118,7 @@ export const DATA = {
         "Implemented a custom Kubernetes controller in Go to automate the deployment of MySQL and ProxySQL custom resources in order to enable 2,000+ internal developers to instantly deploy their app databases to production. Wrote several scripts in Go to automate MySQL database failovers while maintaining master-slave replication topologies and keeping Zookeeper nodes consistent with changes.",
     },
     {
-      company: "Nvidia",
+      company: "Perago Information Systems ",
       href: "https://nvidia.com/",
       badges: [],
       location: "Santa Clara, CA",
@@ -130,7 +130,7 @@ export const DATA = {
         "Architected and wrote the entire MVP of the GeForce Now Cloud Gaming internal admin and A/B testing dashboard using React, Redux, TypeScript, and Python.",
     },
     {
-      company: "Splunk",
+      company: "Muyalogy",
       href: "https://splunk.com",
       badges: [],
       location: "San Jose, CA",
@@ -142,7 +142,7 @@ export const DATA = {
         "Co-developed a prototype iOS app with another intern in Swift for the new Splunk Phantom security orchestration product (later publicly demoed and launched at .conf annual conference in Las Vegas). Implemented a realtime service for the iOS app in Django (Python) and C++; serialized data using protobufs transmitted over gRPC resulting in an approximate 500% increase in data throughput.",
     },
     {
-      company: "Lime",
+      company: "Dynamic Technologies",
       href: "https://li.me/",
       badges: [],
       location: "San Francisco, CA",
@@ -154,7 +154,7 @@ export const DATA = {
         "Proposed and implemented an internal ruby API for sending/receiving commands to scooters over LTE networks. Developed a fully automated bike firmware update system to handle asynchronous firmware updates of over 100,000+ scooters worldwide, and provide progress reports in real-time using React, Ruby on Rails, PostgreSQL and AWS EC2 saving hundreds of developer hours.",
     },
     {
-      company: "Mitre Media",
+      company: "Lela Tech",
       href: "https://mitremedia.com/",
       badges: [],
       location: "Toronto, ON",
@@ -168,7 +168,7 @@ export const DATA = {
   ],
   education: [
     {
-      school: "Buildspace",
+      school: "Safari Academy",
       href: "https://buildspace.so",
       degree: "s3, s4, sf1, s5",
       logoUrl: "/buildspace.jpg",
@@ -176,7 +176,7 @@ export const DATA = {
       end: "2024",
     },
     {
-      school: "University of Waterloo",
+      school: "Addis Ababa Science and Technology University",
       href: "https://uwaterloo.ca",
       degree: "Bachelor's Degree of Computer Science (BCS)",
       logoUrl: "/waterloo.png",
@@ -184,7 +184,7 @@ export const DATA = {
       end: "2021",
     },
     {
-      school: "Wilfrid Laurier University",
+      school: "Georgia Institute of Technology",
       href: "https://wlu.ca",
       degree: "Bachelor's Degree of Business Administration (BBA)",
       logoUrl: "/laurier.png",
@@ -192,7 +192,7 @@ export const DATA = {
       end: "2021",
     },
     {
-      school: "International Baccalaureate",
+      school: "Self Taught",
       href: "https://ibo.org",
       degree: "IB Diploma",
       logoUrl: "/ib.png",
