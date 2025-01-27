@@ -2,62 +2,77 @@ import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon } from "lucide-react";
 
 export const DATA = {
-  name: "Dillion Verma",
-  initials: "DV",
+  name: "Yohannes Getachew",
+  initials: "YG",
   url: "https://dillion.io",
   location: "San Francisco, CA",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
-  description:
-    "Software Engineer turned Entrepreneur. I love building things and helping people. Very active on Twitter.",
+  description: "Software Engineer| Project Manager | Blockchain Developer",
   summary:
     "At the end of 2022, I quit my job as a software engineer to go fulltime into building and scaling my own SaaS businesses. In the past, [I pursued a double degree in computer science and business](/#education), [interned at big tech companies in Silicon Valley](https://www.youtube.com/watch?v=d-LJ2e5qKdE), and [competed in over 21 hackathons for fun](/#hackathons). I also had the pleasure of being a part of the first ever in-person cohort of buildspace called [buildspace sf1](https://buildspace.so/sf1).",
   avatarUrl: "/me.png",
   skills: [
-    "React",
-    "Next.js",
-    "Typescript",
-    "Node.js",
+    // Programming Languages
+    "C++",
+    "TypeScript",
+    "JavaScript",
     "Python",
     "Go",
-    "Postgres",
-    "Docker",
-    "Kubernetes",
     "Java",
-    "C++",
+    // Frameworks and Libraries
+    "Next.js",
+    "Node.js",
+    "React",
+    "Nest.js",
+    "GraphQL",
+    "TailwindCSS",
+    "redux",
+    // Databases
+    "Postgres",
+    "sql",
+    "Redis",
+    "MongoDB",
+    // Cloud Services
+    "AWS",
+    "Firebase",
+    "AWS Lambda",
+    // Other Tools
+    "RabbitMQ",
+    "Docker",
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
-    email: "hello@example.com",
-    tel: "+123456789",
+    email: "yohannesgetachewerieso@gmail.com",
+    tel: "+251938321124",
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://dub.sh/dillion-github",
+        url: "https://github.com/yohhannees",
         icon: Icons.github,
 
         navbar: true,
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://dub.sh/dillion-linkedin",
+        url: "https://www.linkedin.com/in/yohannes-getachew-667a1b241/",
         icon: Icons.linkedin,
 
         navbar: true,
       },
       X: {
         name: "X",
-        url: "https://dub.sh/dillion-twitter",
+        url: "https://x.com/yohhannees",
         icon: Icons.x,
 
         navbar: true,
       },
-      Youtube: {
-        name: "Youtube",
-        url: "https://dub.sh/dillion-youtube",
-        icon: Icons.youtube,
+      whatsapp: {
+        name: "whatsapp",
+        url: "https://wa.me/251938321124",
+        icon: Icons.whatsapp,
         navbar: true,
       },
       email: {
@@ -67,16 +82,23 @@ export const DATA = {
 
         navbar: false,
       },
+      npm: {
+        name: "Send Email",
+        url: "https://www.npmjs.com/~yohhannees",
+        icon: Icons.npm,
+
+        navbar: true,
+      },
     },
   },
 
   work: [
     {
-      company: "Atomic Finance",
-      href: "https://atomic.finance",
+      company: "Endubis Blockchain Solutions",
+      href: "https://x.com/EndubisWallet",
       badges: [],
-      location: "Remote",
-      title: "Bitcoin Protocol Engineer",
+      location: "Fulltime",
+      title: "Project Manager - Backend Engineer",
       logoUrl: "/atomic.png",
       start: "May 2021",
       end: "Oct 2022",
