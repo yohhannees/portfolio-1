@@ -166,7 +166,7 @@ export const DATA = {
         "Designed and Developed shop management websites and integrating APIs, including custom odds APIs and integrating systems.",
     },
     {
-      company: "Creative Codes-Saudi Arabia(Remotes)",
+      company: "Creative Codes-Saudi Arabia(Remote)",
       href: "https://c-code.net/",
       badges: [],
       location: "Saudi Arabia - Remote",
