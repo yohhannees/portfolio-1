@@ -10,7 +10,7 @@ export const DATA = {
   description: "Software Engineer| Project Manager | Blockchain Developer",
   summary:
     "A results-driven Software Engineer with a strong background in full-stack development, system architecture, blockchain solutions, and project management. Committed to building scalable, high-performance applications that enhance efficiency, security, and user experience. Skilled in solving complex technical challenges and delivering innovative, tailored software solutions that drive business success.",
-  avatarUrl: "/meee.jpeg",
+  avatarUrl: "/me.jpeg",
   skills: [
     // Programming Languages
     "C++",
