@@ -10,7 +10,7 @@ export const DATA = {
   description: "Software Engineer| Project Manager | Blockchain Developer",
   summary:
     "A results-driven Software Engineer with a strong background in full-stack development, system architecture, blockchain solutions, and project management. Committed to building scalable, high-performance applications that enhance efficiency, security, and user experience. Skilled in solving complex technical challenges and delivering innovative, tailored software solutions that drive business success.",
-  avatarUrl: "/me.jpeg",
+  avatarUrl: "/jjj.png",
   skills: [
     // Programming Languages
     "C++",
@@ -39,6 +39,9 @@ export const DATA = {
     // Other Tools
     "RabbitMQ",
     "Docker",
+    // Other Tools
+    "Solana",
+    "Cardano",
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
@@ -295,7 +298,7 @@ export const DATA = {
         },
         {
           type: "App",
-          href: "https://t.me/EndubisTestWalletBot",
+          href: "https://t.me/EndubisWalletBot",
           icon: <Icons.framermotion className="size-3" />,
         },
       ],
@@ -360,6 +363,62 @@ export const DATA = {
         },
       ],
       image: "/jiret.png",
+      video: "",
+    },
+    {
+      title: "Unichain",
+      href: "https://unichain-nu.vercel.app/",
+      dates: "September 2023  - December 2024",
+      active: true,
+      description:
+        "Unichain is a Web3 platform built on Solana that brings blockchain innovation to universities. Students can mint NFT-based ID credentials, earn tokens for campus engagement, and connect through a fast, secure network. Unichain redefines student identity, rewards, and community participation in the digital age.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "PostgreSQL",
+        "DrizzleOrm",
+        "TailwindCSS",
+        "Mantine UI",
+        "Cloudflare Workers",
+        "Aws",
+        "Web3js",
+        "solana",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://unichain-nu.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/unichain.png",
+      video: "",
+    },
+    {
+      title: "StockSavy",
+      href: "https://shop-management-five.vercel.app/",
+      dates: "September 2024  - january 2024",
+      active: true,
+      description:
+        "StockSavvy is a smart inventory management platform built for modern retailers, combining stock tracking, sales, and lending with powerful analytics. Currently tested and running in over 10 real shops across Addis Ababa, it’s proven to streamline operations and boost business growth. Make smarter, data-driven decisions with confidence.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "PostgreSQL",
+        "DrizzleOrm",
+        "TailwindCSS",
+        "Mantine UI",
+        "Cloudflare Workers",
+        "Vercel",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://unichain-nu.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/stock.png",
       video: "",
     },
   ],
