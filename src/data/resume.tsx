@@ -267,7 +267,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "/muyalogy.png",
+      image: "/mmmm.png",
       video: "",
     },
     {
@@ -419,6 +419,51 @@ export const DATA = {
         },
       ],
       image: "/stock.png",
+      video: "",
+    },
+    {
+      title: "Creative Code",
+      href: "https://creative-code-wzot.vercel.app/",
+      dates: "September 2024  - january 2024",
+      active: true,
+      description:
+        "Creative Code is a web application designed to help users create and manage their own coding projects. It offers a user-friendly interface for users to create, edit, and save their code snippets, as well as a feature to share their projects with others. The application is built using Next.js and TailwindCSS, making it easy to customize and integrate with other projects.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "PostgreSQL",
+        "DrizzleOrm",
+        "TailwindCSS",
+        "Mantine UI",
+        "Cloudflare Workers",
+        "Vercel",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://creative-code-wzot.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/cccc.png",
+      video: "",
+    },
+    {
+      title: "Semantic File Explorer",
+      href: "https://creative-code-wzot.vercel.app/",
+      dates: "march 2024  - may 2025",
+      active: true,
+      description:
+        "Transform your file management experience with our AI-powered desktop application, designed to help you search and retrieve files using natural language and semantic understanding.SemanticFinder was developed to address the limitations of traditional file management systems, combining AI-powered semantic search with local file indexing.",
+      technologies: ["Rust", "Tauri", "Shadcn", "ReactJs", "LanceDb"],
+      links: [
+        {
+          type: "Desktop App",
+          href: "https://semantic-file-explorer.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/sem.png",
       video: "",
     },
   ],
