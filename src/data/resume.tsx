@@ -7,7 +7,8 @@ export const DATA = {
   url: "https://dillion.io",
   location: "San Francisco, CA",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
-  description: "Software Engineer| Project Manager | Blockchain Developer",
+  description:
+    "Software Engineer | Product & Project Manager | Blockchain Developer",
   summary:
     "A results-driven Software Engineer with a strong background in full-stack development, system architecture, blockchain solutions, and project management. Committed to building scalable, high-performance applications that enhance efficiency, security, and user experience. Skilled in solving complex technical challenges and delivering innovative, tailored software solutions that drive business success.",
   avatarUrl: "/jjj.png",
@@ -86,7 +87,7 @@ export const DATA = {
         navbar: false,
       },
       npm: {
-        name: "Send Email",
+        name: "Npm",
         url: "https://www.npmjs.com/~yohhannees",
         icon: Icons.npm,
 
@@ -97,6 +98,18 @@ export const DATA = {
 
   work: [
     {
+      company: "Veretin Blockchain | Web3",
+      href: "https://veretin.com/",
+      badges: [],
+      location: "Dubai",
+      title: "Team Lead",
+      logoUrl: "/veretin.jpeg",
+      start: "june 2025",
+      end: "Present",
+      description:
+        "Led a team of 5 engineers while spearheading recruitment for top Web3 and blockchain companies. Managed end-to-end hiring processes including technical assessments, coding interviews, and candidate evaluation. Oversaw smart contract audits, security testing, and development of blockchain and cryptography solutions on the blockchain, ensuring high-quality deliverables and compliance across projects.",
+    },
+    {
       company: "Endubis Blockchain Solutions",
       href: "https://x.com/EndubisWallet",
       badges: [],
@@ -106,7 +119,7 @@ export const DATA = {
       start: "May 2024",
       end: "Present",
       description:
-        "As a Project Manager, I led the development of a wallet App and cryptocurrency System on the Cardano blockchain, managing a team of developers ",
+        "Led a distributed engineering team to build a secure wallet application and cryptocurrency system on the Cardano blockchain. Oversaw sprint planning, roadmap definition, and release management under Agile methodology, improving sprint efficiency by 30%. Defined on-chain and off-chain communication layers and performed security audits to ensure compliance and safety. Implemented DevOps pipelines for automated testing and deployment, increasing release reliability.",
     },
     {
       company: "SoundRig-United Kingdom(Remote)",
@@ -118,7 +131,7 @@ export const DATA = {
       start: "June 2023",
       end: "Present",
       description:
-        "Led a team of developers in creating a decentralized music app and an NFT minting system on the Cardano blockchain.",
+        "Directed the design and development of a decentralized music and NFT platform on the Cardano blockchain. Led and mentored a team of developers while managing integrations. Engineered the NFT minting flow, metadata strategy, and marketplace connections, improving mint success rates by 25%. Introduced automated code reviews and continuous integration pipelines, enhancing delivery speed and code quality.",
     },
     {
       company: "Perago Information Systems ",
@@ -130,7 +143,7 @@ export const DATA = {
       start: "June 2023",
       end: "July 2024",
       description:
-        "Collaborated on E-Service Projects and Developed an Employee Management System",
+        "Collaborated on E-Service projects and developed Employee Management System modules. Gained hands-on experience in backend development, database management, and cloud deployment pipelines, while supporting seamless integration with E-Service platforms.",
     },
     {
       company: "Muyalogy",
@@ -142,7 +155,7 @@ export const DATA = {
       start: "September 2023",
       end: " July 2024",
       description:
-        "Designed, researched, and created case studies for apps, websites, and various systems, including mockups, wireframes, and prototypes.",
+        "Designed and developed LMS modules, including courses, tracking, and dashboards, while building scalable SaaS infrastructure with reusable APIs. Improved application performance and usability by refactoring core UI components and API logic. Collaborated closely with stakeholders to ensure product alignment and enhance user satisfaction, creating case studies, mockups, wireframes, and prototypes for apps, websites, and systems.",
     },
     {
       company: "Dynamic Technologies",
@@ -154,7 +167,7 @@ export const DATA = {
       start: "January 2023",
       end: "June 2024",
       description:
-        "Developed shop management websites and betting platforms, including custom odds APIs and betting systems.",
+        "Developed backend systems for e-commerce and betting platforms using Node.js and PostgreSQL. Built custom odds APIs, authentication systems, and secure payment integrations. Optimized system performance and database queries, improving response times and scalability, while delivering shop management websites and betting platforms.",
     },
     {
       company: "Lela Tech",
@@ -166,7 +179,7 @@ export const DATA = {
       start: "May 2017",
       end: "August 2017",
       description:
-        "Designed and Developed shop management websites and integrating APIs, including custom odds APIs and integrating systems.",
+        "Designed and developed AI-driven and blockchain-integrated platforms, including smart contract interactions, custom APIs, and decentralized system integrations.",
     },
     {
       company: "Creative Codes-Saudi Arabia(Remote)",
@@ -176,9 +189,9 @@ export const DATA = {
       title: "System Design - Ux Ui Designer",
       logoUrl: "/cc.png",
       start: "February 2023",
-      end: "Present",
+      end: "July 2025",
       description:
-        "Designed, researched, and created case studies for apps, websites, and various systems, including mockups, wireframes, and prototypes.",
+        "Conducted design research and delivered high-quality prototypes, wireframes, and final designs for various clients. Led design system development and user testing for mobile and web platforms, resulting in improved engagement metrics. Additionally, contributed to system design, ensuring scalable and user-centric architecture across applications and websites.",
     },
     {
       company: "Software Engineers Association",
@@ -200,7 +213,7 @@ export const DATA = {
       title: "Project Manager-Mentor-Education Operator",
       logoUrl: "/gdgl.png",
       start: "June 2022",
-      end: "Present",
+      end: " June 20205",
       description:
         "Working as an Education Operator, Project Manager and Mentor at Google Developer Student Clubs, helping students by organizing hackathons and leading projects",
     },
@@ -414,7 +427,7 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://unichain-nu.vercel.app/",
+          href: "https://shop-management-five.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
