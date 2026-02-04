@@ -479,6 +479,167 @@ export const DATA = {
       image: "/sem.png",
       video: "",
     },
+    {
+      title: "Endubis Journey",
+      href: "https://endubis-journey.vercel.app/",
+      dates: "2024",
+      active: true,
+      description:
+        "A landing page showcasing the Endubis ecosystem and blockchain journey, featuring modern design and interactive elements.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Vercel",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://endubis-journey.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/endubis.png",
+      video: "",
+    },
+    {
+      title: "Madvervet",
+      href: "https://madvervet-teal.vercel.app/",
+      dates: "2024",
+      active: true,
+      description:
+        "A modern web application built with contemporary design principles and responsive user interface.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Vercel",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://madvervet-teal.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/dynamic.jpeg",
+      video: "",
+    },
+    {
+      title: "Draft Two",
+      href: "https://draft-two-lime.vercel.app/",
+      dates: "2024",
+      active: true,
+      description:
+        "A prototype application showcasing advanced frontend development capabilities with modern web technologies.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Vercel",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://draft-two-lime.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/cccc.png",
+      video: "",
+    },
+    {
+      title: "New Endubis Landing",
+      href: "https://new-endubis-landing.vercel.app/",
+      dates: "2024",
+      active: true,
+      description:
+        "An updated landing page for Endubis, featuring enhanced user experience and modern design elements.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Vercel",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://new-endubis-landing.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/endubis.png",
+      video: "",
+    },
+    {
+      title: "Endubis IO",
+      href: "https://endubis-io.vercel.app/",
+      dates: "2024",
+      active: true,
+      description:
+        "The official Endubis platform, providing comprehensive blockchain and cryptocurrency services with a focus on user-friendly interface.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Vercel",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://endubis-io.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/endubis.jpg",
+      video: "",
+    },
+    {
+      title: "Creavo Studio",
+      href: "https://creavostudio.vercel.app/",
+      dates: "2024",
+      active: true,
+      description:
+        "A creative studio platform showcasing innovative design and development work with modern web technologies.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Vercel",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://creavostudio.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/creative.png",
+      video: "",
+    },
+    {
+      title: "Mindora",
+      href: "https://mindora-flame.vercel.app/",
+      dates: "2024",
+      active: true,
+      description:
+        "A modern web application focused on mindfulness and mental wellness with an intuitive user interface.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Vercel",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://mindora-flame.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/me.png",
+      video: "",
+    },
   ],
   hackathons: [],
   // hackathons: [
