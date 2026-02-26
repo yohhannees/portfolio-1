@@ -95,14 +95,14 @@ const CardContent = ({
   href,
 }: ResumeCardProps & { isExpanded: boolean }) => {
   return (
-    <div className="relative overflow-hidden rounded-xl border border-neutral-200/70 dark:border-neutral-800/80 bg-white/55 dark:bg-neutral-950/60 p-4 shadow-[0_18px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-300 hover:border-cyan-500/50 hover:bg-white/70 dark:hover:bg-neutral-900/70 hover:shadow-[0_22px_60px_rgba(8,47,73,0.45)]">
+    <div className="relative overflow-hidden rounded-xl border border-slate-200/80 bg-white/85 p-4 shadow-[0_18px_45px_rgba(15,23,42,0.18)] backdrop-blur-xl transition-all duration-300 hover:border-slate-300 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10 dark:hover:border-white/40">
       {/* Accent Line on Hover */}
-      <div className="absolute left-0 top-0 bottom-0 w-[3px] origin-top scale-y-0 bg-gradient-to-b from-cyan-400 via-sky-500 to-violet-500 opacity-0 transition-all duration-300 group-hover:scale-y-100 group-hover:opacity-100" />
+      <div className="absolute left-0 top-0 bottom-0 w-[3px] origin-top scale-y-0 bg-gradient-to-b from-white via-slate-200 to-slate-400 opacity-0 transition-all duration-300 group-hover:scale-y-100 group-hover:opacity-100 dark:from-slate-200 dark:via-slate-400 dark:to-slate-600" />
 
       <div className="flex items-start gap-4">
         {/* Avatar Section */}
         <motion.div layout className="flex-none">
-          <Avatar className="size-12 border border-white/20 bg-white/80 dark:border-white/10 dark:bg-neutral-950/80 shadow-md shadow-cyan-500/10 transition-transform duration-300 group-hover:scale-105">
+          <Avatar className="size-12 border border-slate-200 bg-white shadow-md shadow-slate-300/70 transition-transform duration-300 group-hover:scale-105 dark:border-white/20 dark:bg-white/10 dark:shadow-black/40 dark:backdrop-blur-xl">
             <AvatarImage
               src={logoUrl}
               alt={altText}
@@ -118,7 +118,7 @@ const CardContent = ({
         <div className="flex-grow space-y-1">
           <div className="flex items-center justify-between gap-2">
             <div className="flex items-center gap-2">
-              <h3 className="font-semibold text-[15px] leading-none tracking-tight text-foreground transition-colors group-hover:text-cyan-500">
+              <h3 className="font-semibold text-[15px] leading-none tracking-tight text-foreground transition-colors group-hover:text-slate-900 dark:group-hover:text-white">
                 {title}
               </h3>
 
@@ -128,7 +128,7 @@ const CardContent = ({
                   className={cn(
                     "size-4 text-muted-foreground transition-all duration-300",
                     isExpanded
-                      ? "rotate-90 text-cyan-500"
+                      ? "rotate-90 text-slate-900 dark:text-slate-100"
                       : "-rotate-90 opacity-0 group-hover:rotate-0 group-hover:opacity-100"
                   )}
                 />
@@ -153,7 +153,7 @@ const CardContent = ({
               {badges.map((badge, index) => (
                 <Badge
                   variant="outline"
-                  className="border-neutral-300/70 bg-white/60 text-[10px] font-medium text-neutral-600 shadow-sm shadow-slate-200/40 backdrop-blur-sm transition-colors dark:border-neutral-700/80 dark:bg-neutral-900/60 dark:text-neutral-300 group-hover:border-cyan-500/40 group-hover:bg-cyan-50/70 dark:group-hover:bg-cyan-950/40"
+                  className="border-slate-200 bg-white text-[10px] font-medium text-slate-700 shadow-sm shadow-slate-200/80 transition-colors dark:border-white/20 dark:bg-white/5 dark:text-slate-200 dark:shadow-slate-900/60"
                   key={index}
                 >
                   {badge}

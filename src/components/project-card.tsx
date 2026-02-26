@@ -43,7 +43,7 @@ export function ProjectCard({
   return (
     <Card
       className={cn(
-        "flex h-full flex-col overflow-hidden rounded-xl border border-neutral-200/70 bg-white/60 shadow-[0_18px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-300 ease-out hover:border-cyan-500/50 hover:bg-white/75 hover:shadow-[0_22px_60px_rgba(8,47,73,0.45)] dark:border-neutral-800/80 dark:bg-neutral-950/70 dark:hover:bg-neutral-900/80",
+        "flex h-full flex-col overflow-hidden rounded-xl border border-slate-200/80 bg-white/85 shadow-[0_18px_45px_rgba(15,23,42,0.18)] backdrop-blur-xl transition-all duration-300 ease-out hover:border-slate-300 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10 dark:hover:border-white/40",
         className
       )}
     >
@@ -89,7 +89,7 @@ export function ProjectCard({
           <div className="mt-2 flex flex-wrap gap-1.5">
             {tags?.map((tag) => (
               <Badge
-                className="px-2 py-0.5 text-[10px] font-medium border-neutral-200/70 bg-white/70 text-neutral-700 shadow-sm shadow-slate-200/50 backdrop-blur-sm dark:border-neutral-700/80 dark:bg-neutral-900/70 dark:text-neutral-200"
+                className="px-2 py-0.5 text-[10px] font-medium border-white/40 bg-white/15 text-slate-800 shadow-sm shadow-slate-200/60 backdrop-blur-sm dark:border-white/20 dark:bg-white/5 dark:text-slate-200"
                 variant="secondary"
                 key={tag}
               >
@@ -106,7 +106,7 @@ export function ProjectCard({
               <Link href={link?.href} key={idx} target="_blank">
                 <Badge
                   key={idx}
-                  className="flex gap-2 rounded-full border border-cyan-500/40 bg-cyan-50/70 px-2.5 py-1 text-[10px] font-medium text-cyan-700 shadow-sm shadow-cyan-200/60 transition-colors hover:bg-cyan-100/80 dark:border-cyan-400/50 dark:bg-cyan-950/50 dark:text-cyan-100"
+                  className="flex gap-2 rounded-full border border-white/50 bg-white/20 px-2.5 py-1 text-[10px] font-medium text-slate-900 shadow-sm shadow-slate-300/70 backdrop-blur-sm transition-colors hover:bg-white/40 dark:border-white/30 dark:bg-white/10 dark:text-slate-100"
                 >
                   {link.icon}
                   {link.type}

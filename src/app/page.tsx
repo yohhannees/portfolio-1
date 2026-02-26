@@ -30,7 +30,7 @@ export default function Page() {
 
               <BlurFadeText
                 delay={BLUR_FADE_DELAY}
-                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-gradient-to-r from-sky-500 via-cyan-400 to-violet-500 bg-clip-text text-transparent animate-text-shimmer"
+                className="text-3xl font-bold tracking-tighter text-slate-900 sm:text-5xl xl:text-6xl/none dark:bg-gradient-to-r dark:from-slate-100 dark:via-slate-300 dark:to-slate-500 dark:bg-clip-text dark:text-transparent animate-text-shimmer"
                 yOffset={8}
                 text={DATA.name}
               />
@@ -47,7 +47,7 @@ export default function Page() {
                     href="#projects"
                     className={cn(
                       buttonVariants({ size: "sm" }),
-                      "gap-2 rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 text-white shadow-lg shadow-sky-500/25 hover:from-sky-400 hover:to-cyan-400"
+                      "gap-2 rounded-full bg-white/90 text-slate-900 shadow-lg shadow-slate-400/40 backdrop-blur-xl hover:bg-white"
                     )}
                   >
                     <span className="text-xs font-semibold uppercase tracking-[0.18em]">
@@ -70,7 +70,7 @@ export default function Page() {
               <BlurFade delay={BLUR_FADE_DELAY * 2.5}>
                 <div className="flex flex-wrap items-center gap-3 pt-3 text-xs text-muted-foreground">
                   <div className="inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-background/60 px-3 py-1 backdrop-blur-sm">
-                    <span className="h-1.5 w-8 rounded-full bg-gradient-to-r from-cyan-400 to-sky-500" />
+                    <span className="h-1.5 w-8 rounded-full bg-gradient-to-r from-white/80 to-slate-200/80 dark:from-slate-200 dark:to-slate-400" />
                     <span className="font-medium">{DATA.location}</span>
                   </div>
                   <div className="flex flex-wrap items-center gap-1.5">
@@ -94,9 +94,9 @@ export default function Page() {
 
             <BlurFade delay={BLUR_FADE_DELAY}>
               <div className="relative flex items-center justify-center">
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-cyan-500/30 via-transparent to-violet-500/20 blur-2xl" />
-                <div className="relative rounded-3xl border border-white/10 bg-background/70 p-1.5 shadow-[0_18px_60px_rgba(15,23,42,0.45)] backdrop-blur-xl">
-                  <Avatar className="size-28 border border-white/10 shadow-lg shadow-cyan-500/20">
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-white/40 via-white/5 to-slate-300/30 blur-2xl dark:from-white/10 dark:via-white/0 dark:to-slate-700/40" />
+                <div className="relative rounded-3xl border border-white/20 bg-white/10 p-1.5 shadow-[0_18px_60px_rgba(15,23,42,0.65)] backdrop-blur-2xl dark:border-white/10 dark:bg-white/5">
+                  <Avatar className="size-28 border border-white/30 bg-white/20 shadow-lg shadow-black/40 backdrop-blur-2xl">
                     <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
                     <AvatarFallback className="text-lg font-semibold">
                       {DATA.initials}
