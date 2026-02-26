@@ -5,7 +5,10 @@ import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 import { DATA } from "@/data/resume";
+import { cn } from "@/lib/utils";
+import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
 
@@ -16,25 +19,91 @@ export default function Page() {
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
-          <div className="gap-2 flex justify-between">
-            <div className="flex-col flex flex-1 space-y-1.5">
+          <div className="flex flex-col-reverse items-start justify-between gap-6 sm:flex-row sm:items-center sm:gap-4">
+            <div className="flex flex-1 flex-col space-y-3.5">
+              <BlurFade delay={BLUR_FADE_DELAY}>
+                <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/60 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground shadow-sm backdrop-blur-sm dark:bg-background/70">
+                  <span className="size-1.5 rounded-full bg-emerald-400 shadow-[0_0_0_4px_rgba(52,211,153,0.35)]" />
+                  <span>Available for impactful projects</span>
+                </div>
+              </BlurFade>
+
               <BlurFadeText
                 delay={BLUR_FADE_DELAY}
-                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-gradient-to-r from-sky-500 via-cyan-400 to-violet-500 bg-clip-text text-transparent animate-text-shimmer"
                 yOffset={8}
-                text={` ${DATA.name}`}
+                text={DATA.name}
               />
+
               <BlurFadeText
-                className="max-w-[600px] md:text-xl"
+                className="max-w-[600px] text-sm text-muted-foreground md:text-base"
                 delay={BLUR_FADE_DELAY}
                 text={DATA.description}
               />
+
+              <BlurFade delay={BLUR_FADE_DELAY * 2}>
+                <div className="flex flex-wrap items-center gap-3 pt-2">
+                  <Link
+                    href="#projects"
+                    className={cn(
+                      buttonVariants({ size: "sm" }),
+                      "gap-2 rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 text-white shadow-lg shadow-sky-500/25 hover:from-sky-400 hover:to-cyan-400"
+                    )}
+                  >
+                    <span className="text-xs font-semibold uppercase tracking-[0.18em]">
+                      View projects
+                    </span>
+                    <ArrowRightIcon className="size-3.5" />
+                  </Link>
+                  <Link
+                    href="#contact"
+                    className={cn(
+                      buttonVariants({ variant: "outline", size: "sm" }),
+                      "rounded-full border-dashed border-border/70 bg-background/60 text-xs font-medium tracking-wide hover:border-cyan-500/70 hover:text-cyan-500"
+                    )}
+                  >
+                    Let&apos;s collaborate
+                  </Link>
+                </div>
+              </BlurFade>
+
+              <BlurFade delay={BLUR_FADE_DELAY * 2.5}>
+                <div className="flex flex-wrap items-center gap-3 pt-3 text-xs text-muted-foreground">
+                  <div className="inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-background/60 px-3 py-1 backdrop-blur-sm">
+                    <span className="h-1.5 w-8 rounded-full bg-gradient-to-r from-cyan-400 to-sky-500" />
+                    <span className="font-medium">{DATA.location}</span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    {Object.entries(DATA.contact.social)
+                      .filter(([_, social]) => social.navbar)
+                      .map(([name, social]) => (
+                        <Link
+                          key={name}
+                          href={social.url}
+                          className="inline-flex items-center gap-1 rounded-full border border-border/60 bg-background/70 px-2.5 py-1 text-[11px] text-muted-foreground transition-colors hover:border-cyan-500/70 hover:text-cyan-500"
+                          target="_blank"
+                        >
+                          <social.icon className="size-3" />
+                          <span className="capitalize">{name}</span>
+                        </Link>
+                      ))}
+                  </div>
+                </div>
+              </BlurFade>
             </div>
+
             <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-28 border">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                <AvatarFallback>{DATA.initials}</AvatarFallback>
-              </Avatar>
+              <div className="relative flex items-center justify-center">
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-cyan-500/30 via-transparent to-violet-500/20 blur-2xl" />
+                <div className="relative rounded-3xl border border-white/10 bg-background/70 p-1.5 shadow-[0_18px_60px_rgba(15,23,42,0.45)] backdrop-blur-xl">
+                  <Avatar className="size-28 border border-white/10 shadow-lg shadow-cyan-500/20">
+                    <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
+                    <AvatarFallback className="text-lg font-semibold">
+                      {DATA.initials}
+                    </AvatarFallback>
+                  </Avatar>
+                </div>
+              </div>
             </BlurFade>
           </div>
         </div>

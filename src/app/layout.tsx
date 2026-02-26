@@ -57,10 +57,22 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
+          "relative min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6 overflow-x-hidden",
           fontSans.variable
         )}
       >
+        {/* Ambient background glow + grid, kept outside main spacing */}
+        <div className="pointer-events-none fixed inset-0 -z-10">
+          {/* Soft radial glows */}
+          <div className="absolute -top-32 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-500/15 blur-3xl" />
+          <div className="absolute bottom-0 right-[-6rem] h-64 w-64 rounded-full bg-indigo-500/10 blur-3xl" />
+          <div className="absolute bottom-32 -left-24 h-56 w-56 rounded-full bg-emerald-500/10 blur-3xl" />
+
+          {/* Subtle moving grid overlay */}
+          <div className="absolute inset-x-[-25%] top-0 h-[140%] bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.12),_transparent_60%),linear-gradient(to_bottom,_rgba(148,163,184,0.24),_transparent_55%)] opacity-[0.18] dark:opacity-[0.24]" />
+          <div className="pointer-events-none absolute inset-x-[-25%] top-0 h-[140%] bg-[linear-gradient(to_bottom,_transparent_0,_rgba(15,23,42,0.75)_80%)] mix-blend-soft-light dark:mix-blend-normal" />
+        </div>
+
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
             {children}

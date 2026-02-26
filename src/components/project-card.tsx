@@ -42,14 +42,12 @@ export function ProjectCard({
 }: Props) {
   return (
     <Card
-      className={
-        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
-      }
+      className={cn(
+        "flex h-full flex-col overflow-hidden rounded-xl border border-neutral-200/70 bg-white/60 shadow-[0_18px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-300 ease-out hover:border-cyan-500/50 hover:bg-white/75 hover:shadow-[0_22px_60px_rgba(8,47,73,0.45)] dark:border-neutral-800/80 dark:bg-neutral-950/70 dark:hover:bg-neutral-900/80",
+        className
+      )}
     >
-      <Link
-        href={href || "#"}
-        className={cn("block cursor-pointer", className)}
-      >
+      <Link href={href || "#"} className="block cursor-pointer">
         {video && (
           <video
             src={video}
@@ -57,7 +55,7 @@ export function ProjectCard({
             loop
             muted
             playsInline
-            className="pointer-events-none mx-auto h-40 w-full object-cover object-top" // needed because random black line at bottom of video
+            className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
           />
         )}
         {image && (
@@ -66,14 +64,18 @@ export function ProjectCard({
             alt={title}
             width={500}
             height={300}
-            className="h-40 w-full overflow-hidden object-cover object-top"
+            className="h-40 w-full overflow-hidden object-cover object-top transition-transform duration-500 hover:scale-[1.03]"
           />
         )}
       </Link>
-      <CardHeader className="px-2">
+      <CardHeader className="px-3 pt-3">
         <div className="space-y-1">
-          <CardTitle className="mt-1 text-base">{title}</CardTitle>
-          <time className="font-sans text-xs">{dates}</time>
+          <CardTitle className="mt-1 text-[15px] tracking-tight">
+            {title}
+          </CardTitle>
+          <time className="font-sans text-[11px] text-muted-foreground">
+            {dates}
+          </time>
           <div className="hidden font-sans text-xs underline print:visible">
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
           </div>
@@ -82,12 +84,12 @@ export function ProjectCard({
           </Markdown>
         </div>
       </CardHeader>
-      <CardContent className="mt-auto flex flex-col px-2">
+      <CardContent className="mt-auto flex flex-col px-3 pb-2">
         {tags && tags.length > 0 && (
-          <div className="mt-2 flex flex-wrap gap-1">
+          <div className="mt-2 flex flex-wrap gap-1.5">
             {tags?.map((tag) => (
               <Badge
-                className="px-1 py-0 text-[10px]"
+                className="px-2 py-0.5 text-[10px] font-medium border-neutral-200/70 bg-white/70 text-neutral-700 shadow-sm shadow-slate-200/50 backdrop-blur-sm dark:border-neutral-700/80 dark:bg-neutral-900/70 dark:text-neutral-200"
                 variant="secondary"
                 key={tag}
               >
@@ -97,12 +99,15 @@ export function ProjectCard({
           </div>
         )}
       </CardContent>
-      <CardFooter className="px-2 pb-2">
+      <CardFooter className="px-3 pb-3">
         {links && links.length > 0 && (
           <div className="flex flex-row flex-wrap items-start gap-1">
             {links?.map((link, idx) => (
               <Link href={link?.href} key={idx} target="_blank">
-                <Badge key={idx} className="flex gap-2 px-2 py-1 text-[10px]">
+                <Badge
+                  key={idx}
+                  className="flex gap-2 rounded-full border border-cyan-500/40 bg-cyan-50/70 px-2.5 py-1 text-[10px] font-medium text-cyan-700 shadow-sm shadow-cyan-200/60 transition-colors hover:bg-cyan-100/80 dark:border-cyan-400/50 dark:bg-cyan-950/50 dark:text-cyan-100"
+                >
                   {link.icon}
                   {link.type}
                 </Badge>

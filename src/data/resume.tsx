@@ -5,7 +5,7 @@ export const DATA = {
   name: "Yohannes Getachew",
   initials: "YG",
   url: "https://dillion.io",
-  location: "San Francisco, CA",
+  location: "Socials",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description:
     "Software Engineer | Product & Project Manager | Blockchain Developer",

@@ -95,14 +95,14 @@ const CardContent = ({
   href,
 }: ResumeCardProps & { isExpanded: boolean }) => {
   return (
-    <div className="relative overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white/50 dark:bg-black/50 p-4 transition-all duration-300 hover:bg-neutral-100/50 dark:hover:bg-neutral-800/50 hover:shadow-lg dark:hover:shadow-neutral-900/50">
+    <div className="relative overflow-hidden rounded-xl border border-neutral-200/70 dark:border-neutral-800/80 bg-white/55 dark:bg-neutral-950/60 p-4 shadow-[0_18px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-300 hover:border-cyan-500/50 hover:bg-white/70 dark:hover:bg-neutral-900/70 hover:shadow-[0_22px_60px_rgba(8,47,73,0.45)]">
       {/* Accent Line on Hover */}
-      <div className="absolute left-0 top-0 bottom-0 w-1 scale-y-0 transition-transform duration-300 group-hover:scale-y-100 origin-top" />
+      <div className="absolute left-0 top-0 bottom-0 w-[3px] origin-top scale-y-0 bg-gradient-to-b from-cyan-400 via-sky-500 to-violet-500 opacity-0 transition-all duration-300 group-hover:scale-y-100 group-hover:opacity-100" />
 
       <div className="flex items-start gap-4">
         {/* Avatar Section */}
         <motion.div layout className="flex-none">
-          <Avatar className="size-12 border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-black shadow-sm group-hover:scale-105 transition-transform duration-300">
+          <Avatar className="size-12 border border-white/20 bg-white/80 dark:border-white/10 dark:bg-neutral-950/80 shadow-md shadow-cyan-500/10 transition-transform duration-300 group-hover:scale-105">
             <AvatarImage
               src={logoUrl}
               alt={altText}
@@ -118,7 +118,7 @@ const CardContent = ({
         <div className="flex-grow space-y-1">
           <div className="flex items-center justify-between gap-2">
             <div className="flex items-center gap-2">
-              <h3 className="font-bold text-base leading-none tracking-tight transition-colors">
+              <h3 className="font-semibold text-[15px] leading-none tracking-tight text-foreground transition-colors group-hover:text-cyan-500">
                 {title}
               </h3>
 
@@ -136,24 +136,24 @@ const CardContent = ({
             </div>
 
             {/* Period (Technical Font) */}
-            <div className="text-xs font-mono text-muted-foreground tabular-nums opacity-70 group-hover:opacity-100 transition-opacity">
+            <div className="text-[11px] font-mono text-muted-foreground tabular-nums opacity-70 group-hover:opacity-100 transition-opacity">
               {period}
             </div>
           </div>
 
           {subtitle && (
-            <div className="font-sans text-sm text-foreground/80 font-medium">
+            <div className="font-sans text-[13px] font-medium text-foreground/80">
               {subtitle}
             </div>
           )}
 
           {/* Badges */}
           {badges && badges.length > 0 && (
-            <div className="flex flex-wrap gap-1 mt-2">
+            <div className="mt-2 flex flex-wrap gap-1.5">
               {badges.map((badge, index) => (
                 <Badge
                   variant="outline"
-                  className="text-[10px] px-2 py-0.5 border-neutral-300 dark:border-neutral-700 text-neutral-600 dark:text-neutral-400 group-hover:border-cyan-500/30   transition-colors"
+                  className="border-neutral-300/70 bg-white/60 text-[10px] font-medium text-neutral-600 shadow-sm shadow-slate-200/40 backdrop-blur-sm transition-colors dark:border-neutral-700/80 dark:bg-neutral-900/60 dark:text-neutral-300 group-hover:border-cyan-500/40 group-hover:bg-cyan-50/70 dark:group-hover:bg-cyan-950/40"
                   key={index}
                 >
                   {badge}
