@@ -185,7 +185,7 @@ const CardContent = ({
                     target="_blank"
                     // stopPropagation prevents the accordion from toggling when clicking the link
                     onClick={(e) => e.stopPropagation()}
-                    className="inline-flex items-center gap-1 text-xs text-white   font-medium hover:underline transition-colors"
+                    className="inline-flex items-center gap-1 text-xs font-medium text-cyan-600 hover:text-cyan-700 dark:text-cyan-300 dark:hover:text-cyan-200 hover:underline transition-colors"
                   >
                     Visit Website <ExternalLinkIcon className="size-3" />
                   </Link>
