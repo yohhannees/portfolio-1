@@ -63,17 +63,19 @@ export default function RootLayout({
       >
         {/* Ambient background glow + grid, kept outside main spacing */}
         <div className="pointer-events-none fixed inset-0 -z-10">
-          {/* Soft radial glows */}
-          <div className="absolute -top-32 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/30 blur-3xl dark:bg-white/5" />
-          <div className="absolute bottom-0 right-[-6rem] h-64 w-64 rounded-full bg-white/20 blur-3xl dark:bg-white/10" />
-          <div className="absolute bottom-32 -left-24 h-56 w-56 rounded-full bg-white/24 blur-3xl dark:bg-white/8" />
+          {/* Soft radial glows (lighter in light mode to keep text readable) */}
+          <div className="absolute -top-32 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/20 blur-3xl dark:bg-white/5" />
+          <div className="absolute bottom-0 right-[-6rem] h-64 w-64 rounded-full bg-white/15 blur-3xl dark:bg-white/10" />
+          <div className="absolute bottom-32 -left-24 h-56 w-56 rounded-full bg-white/18 blur-3xl dark:bg-white/8" />
 
           {/* Subtle moving grid overlay */}
-          <div className="absolute inset-x-[-25%] top-0 h-[140%] bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.22),_transparent_60%),linear-gradient(to_bottom,_rgba(148,163,184,0.18),_transparent_55%)] opacity-[0.22] dark:opacity-[0.26]" />
-          <div className="pointer-events-none absolute inset-x-[-25%] top-0 h-[140%] bg-[linear-gradient(to_bottom,_rgba(15,23,42,0.45),_rgba(15,23,42,0.95)_85%)] mix-blend-soft-light dark:mix-blend-normal" />
+          <div className="absolute inset-x-[-25%] top-0 h-[140%] bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.18),_transparent_60%),linear-gradient(to_bottom,_rgba(148,163,184,0.14),_transparent_55%)] opacity-[0.18] dark:opacity-[0.24]" />
+          {/* In light mode we avoid the heavy dark gradient so text stays high-contrast;
+             it only appears in dark mode to enrich the background. */}
+          <div className="pointer-events-none absolute inset-x-[-25%] top-0 h-[140%] dark:bg-[linear-gradient(to_bottom,_rgba(15,23,42,0.45),_rgba(15,23,42,0.95)_85%)] dark:mix-blend-normal" />
         </div>
 
-        <ThemeProvider attribute="class" defaultTheme="light">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <TooltipProvider delayDuration={0}>
             {children}
             <Navbar />
