@@ -640,6 +640,23 @@ export const DATA = {
       image: "/m.png",
       video: "",
     },
+    {
+      title: "Gaddacore - Blockchain Decentralized Justice System",
+      href: "https://gaddacore.vercel.app/",
+      dates: "2024",
+      active: true,
+      description: "A blockchain-based decentralized justice system that provides a fair and transparent platform for resolving disputes.Secure your capital in smart-locked vaults. Gadaa ensures you only pay when delivery is verified by on-chain consensus.",
+      technologies: ["Next.js", "TypeScript", "TailwindCSS", "Vercel", "Solana", "Cardano", "Blockchain", "Decentralized", "Justice", "System"],
+      links: [
+        {
+          type: "Website",
+          href: "https://gadda-core.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/gc.png",
+      video: "",
+    },
   ],
   hackathons: [],
   // hackathons: [
