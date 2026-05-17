@@ -1,15 +1,5 @@
-import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import Markdown from "react-markdown";
 
 interface Props {
   title: string;
@@ -17,7 +7,6 @@ interface Props {
   description: string;
   dates: string;
   tags: readonly string[];
-  link?: string;
   image?: string;
   video?: string;
   links?: readonly {
@@ -25,97 +14,110 @@ interface Props {
     type: string;
     href: string;
   }[];
-  className?: string;
 }
 
-export function ProjectCard({
-  title,
-  href,
-  description,
-  dates,
-  tags,
-  link,
-  image,
-  video,
-  links,
-  className,
-}: Props) {
+const TAG_PALETTES = [
+  "bg-violet-100 text-violet-700 border-violet-200 dark:bg-violet-500/10 dark:text-violet-300 dark:border-violet-500/20",
+  "bg-cyan-100 text-cyan-700 border-cyan-200 dark:bg-cyan-500/10 dark:text-cyan-300 dark:border-cyan-500/20",
+  "bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-500/10 dark:text-emerald-300 dark:border-emerald-500/20",
+  "bg-orange-100 text-orange-700 border-orange-200 dark:bg-orange-500/10 dark:text-orange-300 dark:border-orange-500/20",
+  "bg-pink-100 text-pink-700 border-pink-200 dark:bg-pink-500/10 dark:text-pink-300 dark:border-pink-500/20",
+  "bg-indigo-100 text-indigo-700 border-indigo-200 dark:bg-indigo-500/10 dark:text-indigo-300 dark:border-indigo-500/20",
+  "bg-amber-100 text-amber-700 border-amber-200 dark:bg-amber-500/10 dark:text-amber-300 dark:border-amber-500/20",
+  "bg-rose-100 text-rose-700 border-rose-200 dark:bg-rose-500/10 dark:text-rose-300 dark:border-rose-500/20",
+  "bg-teal-100 text-teal-700 border-teal-200 dark:bg-teal-500/10 dark:text-teal-300 dark:border-teal-500/20",
+  "bg-sky-100 text-sky-700 border-sky-200 dark:bg-sky-500/10 dark:text-sky-300 dark:border-sky-500/20",
+];
+
+function tagColor(tag: string) {
+  let hash = 0;
+  for (let i = 0; i < tag.length; i++) {
+    hash = tag.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  return TAG_PALETTES[Math.abs(hash) % TAG_PALETTES.length];
+}
+
+export function ProjectCard({ title, href, description, dates, tags, image, video, links }: Props) {
   return (
-    <Card
-      className={cn(
-        "flex h-full flex-col overflow-hidden rounded-xl border border-slate-200/80 bg-white/85 shadow-[0_18px_45px_rgba(15,23,42,0.18)] backdrop-blur-xl transition-all duration-300 ease-out hover:border-slate-300 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10 dark:hover:border-white/40",
-        className
-      )}
-    >
-      <Link href={href || "#"} className="block cursor-pointer">
-        {video && (
-          <video
-            src={video}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
-          />
-        )}
-        {image && (
-          <Image
-            src={image}
-            alt={title}
-            width={500}
-            height={300}
-            className="h-40 w-full overflow-hidden object-cover object-top transition-transform duration-500 hover:scale-[1.03]"
-          />
-        )}
-      </Link>
-      <CardHeader className="px-3 pt-3">
-        <div className="space-y-1">
-          <CardTitle className="mt-1 text-[15px] tracking-tight">
-            {title}
-          </CardTitle>
-          <time className="font-sans text-[11px] text-muted-foreground">
-            {dates}
-          </time>
-          <div className="hidden font-sans text-xs underline print:visible">
-            {link?.replace("https://", "").replace("www.", "").replace("/", "")}
-          </div>
-          <Markdown className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
-            {description}
-          </Markdown>
+    <div className="group relative flex flex-col bg-card border border-border rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.015] hover:shadow-xl hover:shadow-black/10 dark:hover:shadow-black/40 hover:border-border/60">
+      {(video || image) && (
+        <div className="overflow-hidden">
+          {video ? (
+            <video
+              src={video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+            />
+          ) : image ? (
+            <Image
+              src={image}
+              alt={title}
+              width={600}
+              height={400}
+              className="w-full h-auto object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
+            />
+          ) : null}
         </div>
-      </CardHeader>
-      <CardContent className="mt-auto flex flex-col px-3 pb-2">
-        {tags && tags.length > 0 && (
-          <div className="mt-2 flex flex-wrap gap-1.5">
-            {tags?.map((tag) => (
-              <Badge
-                className="px-2 py-0.5 text-[10px] font-medium border-white/40 bg-white/15 text-slate-800 shadow-sm shadow-slate-200/60 backdrop-blur-sm dark:border-white/20 dark:bg-white/5 dark:text-slate-200"
-                variant="secondary"
+      )}
+
+      <div className="flex flex-col flex-1 p-4 gap-3">
+        <div className="flex items-start justify-between gap-2">
+          <h3 className="font-semibold text-sm text-foreground leading-snug">
+            {href ? (
+              <Link
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-muted-foreground transition-colors"
+              >
+                {title}
+              </Link>
+            ) : (
+              title
+            )}
+          </h3>
+          <span className="text-[10px] font-mono text-muted-foreground shrink-0 tabular-nums pt-0.5">
+            {dates}
+          </span>
+        </div>
+
+        <p className="text-xs text-muted-foreground leading-relaxed line-clamp-4">
+          {description}
+        </p>
+
+        {tags?.length > 0 && (
+          <div className="flex flex-wrap gap-1.5">
+            {tags.map((tag) => (
+              <span
                 key={tag}
+                className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium border ${tagColor(tag)}`}
               >
                 {tag}
-              </Badge>
+              </span>
             ))}
           </div>
         )}
-      </CardContent>
-      <CardFooter className="px-3 pb-3">
+
         {links && links.length > 0 && (
-          <div className="flex flex-row flex-wrap items-start gap-1">
-            {links?.map((link, idx) => (
-              <Link href={link?.href} key={idx} target="_blank">
-                <Badge
-                  key={idx}
-                  className="flex gap-2 rounded-full border border-white/50 bg-white/20 px-2.5 py-1 text-[10px] font-medium text-slate-900 shadow-sm shadow-slate-300/70 backdrop-blur-sm transition-colors hover:bg-white/40 dark:border-white/30 dark:bg-white/10 dark:text-slate-100"
-                >
-                  {link.icon}
-                  {link.type}
-                </Badge>
+          <div className="flex flex-wrap gap-2 pt-2 border-t border-border mt-auto">
+            {links.map((link, idx) => (
+              <Link
+                key={idx}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-[10px] font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {link.icon}
+                {link.type}
               </Link>
             ))}
           </div>
         )}
-      </CardFooter>
-    </Card>
+      </div>
+    </div>
   );
 }

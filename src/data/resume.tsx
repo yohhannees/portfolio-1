@@ -3,14 +3,14 @@ import { HomeIcon, NotebookIcon } from "lucide-react";
 
 export const DATA = {
   name: "Yohannes Getachew",
-  initials: "YG",
+  initials: "JJ",
   url: "https://dillion.io",
   location: "Socials",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description:
     "Software Engineer | Product & Project Manager | Blockchain Developer",
   summary:
-    "A results-driven Software Engineer with a strong background in full-stack development, system architecture, blockchain solutions, and project management. Committed to building scalable, high-performance applications that enhance efficiency, security, and user experience. Skilled in solving complex technical challenges and delivering innovative, tailored software solutions that drive business success.",
+    "I'm a Software Engineer, AI Engineer, Product Manager, and Blockchain Developer with 5+ years spent building scalable full-stack apps, decentralized systems, and AI-powered products. What sets me apart is the blend: deep technical execution paired with sharp product thinking. I work across Web3, full-stack engineering, and AI systems , including hands-on LLM and AI-driven application development. From system architecture to final deployment, I lead projects and distributed teams to ship secure, reliable software that drives measurable business results.",
   avatarUrl: "/jjj.png",
   skills: [
     // Programming Languages
