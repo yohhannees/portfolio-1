@@ -73,6 +73,13 @@ export const DATA = {
 
         navbar: true,
       },
+      Telegram: {
+        name: "Telegram",
+        url: "https://t.me/yohhannees",
+        icon: Icons.telegram,
+
+        navbar: true,
+      },
       whatsapp: {
         name: "whatsapp",
         url: "https://wa.me/251938321124",
@@ -490,6 +497,12 @@ export const DATA = {
         "Next.js",
         "TypeScript",
         "TailwindCSS",
+        "LangChain",
+        "RAG",
+        "Claude API",
+        "OpenAI",
+        "FastAPI",
+        "Python",
         "Vercel",
       ],
       links: [
@@ -628,6 +641,11 @@ export const DATA = {
         "Next.js",
         "TypeScript",
         "TailwindCSS",
+        "LangChain",
+        "RAG",
+        "OpenAI API",
+        "Python",
+        "FastAPI",
         "Vercel",
       ],
       links: [
