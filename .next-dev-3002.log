@@ -1,0 +1,19 @@
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3002
+
+ ✓ Starting...
+ ✓ Ready in 1465ms
+ ○ Compiling / ...
+ ✓ Compiled / in 5.8s (1331 modules)
+ GET / 200 in 668ms
+ ✓ Compiled in 335ms (634 modules)
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 2.3s (720 modules)
+ GET /favicon.ico 200 in 2327ms
+ GET / 200 in 129ms
+ ✓ Compiled in 470ms (634 modules)
+ ✓ Compiled in 169ms (634 modules)
+ ✓ Compiled in 182ms (634 modules)
+ ○ Compiling / ...
+ ✓ Compiled / in 700ms (688 modules)
+ GET / 200 in 877ms

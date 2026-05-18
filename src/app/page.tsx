@@ -2,182 +2,277 @@ import BlurFade from "@/components/magicui/blur-fade";
 import { MasonryProjects } from "@/components/masonry-projects";
 import { ResumeCard } from "@/components/resume-card";
 import { DATA } from "@/data/resume";
+import {
+  ArrowUpRight,
+  BadgeCheck,
+  BrainCircuit,
+  BriefcaseBusiness,
+  Code2,
+  Mail,
+  MapPin,
+  ServerCog,
+  UsersRound,
+  WalletCards,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 const D = 0.04;
 
-const ROLES = [
+const ROLE_TAGS = [
   "AI Engineer",
-  "Full-Stack Engineer",
+  "Full-stack Engineer",
   "Backend Engineer",
-  "Product Manager",
-  "Project Manager",
-  "Blockchain Developer",
+  "Product-minded Builder",
+  "Web3 Engineer",
 ];
 
-const SKILL_GROUPS = [
+const HERO_METRICS = [
+  { value: "5+", label: "Years" },
+  { value: "25+", label: "Projects" },
+  { value: "8+", label: "Teams" },
+];
+
+const RECRUITER_SIGNALS = [
   {
-    category: "Frontend",
-    items: ["React", "Next.js", "TypeScript", "JavaScript", "TailwindCSS", "Redux"],
+    icon: BriefcaseBusiness,
+    label: "Best fit",
+    value: "AI product, backend, full-stack, and Web3 teams",
   },
   {
-    category: "Backend",
-    items: ["Node.js", "NestJS", "Python", "Go", "FastAPI", "Django", "GraphQL", "REST APIs"],
+    icon: BadgeCheck,
+    label: "Strength",
+    value: "Turns ambiguous product ideas into shipped systems",
   },
   {
-    category: "AI & LLM",
-    items: ["Claude API", "OpenAI", "LangChain", "RAG", "MCP Servers", "Prompt Engineering", "AI Agents"],
+    icon: UsersRound,
+    label: "Team value",
+    value: "Leads engineers, plans delivery, and communicates clearly",
+  },
+];
+
+const FOCUS_AREAS = [
+  {
+    icon: BrainCircuit,
+    title: "AI product engineering",
+    text: "LLM apps, RAG flows, agents, Claude/OpenAI integrations, and practical automation.",
   },
   {
-    category: "Blockchain",
-    items: ["Cardano", "TON", "Solana", "Plutus / Haskell", "Smart Contracts", "NFT / Tokenomics"],
+    icon: ServerCog,
+    title: "Backend systems",
+    text: "APIs, services, databases, auth, async workflows, deployment, and reliability work.",
   },
   {
-    category: "Database",
-    items: ["PostgreSQL", "MongoDB", "Redis", "SQL", "Prisma", "DrizzleORM"],
+    icon: Code2,
+    title: "Full-stack execution",
+    text: "Modern React/Next.js interfaces connected to production-ready backend logic.",
   },
   {
-    category: "DevOps & Cloud",
-    items: ["Docker", "AWS", "GitHub Actions", "CI/CD", "Linux", "Vercel"],
-  },
-  {
-    category: "Languages",
-    items: ["TypeScript", "Python", "Go", "C++", "Haskell", "Solidity", "JavaScript"],
-  },
-  {
-    category: "Management",
-    items: ["Agile / Scrum", "Sprint Planning", "Roadmap Definition", "Technical Recruiting", "Team Leadership"],
+    icon: WalletCards,
+    title: "Blockchain delivery",
+    text: "Cardano, TON, Solana, smart contracts, wallets, and secure Web3 product flows.",
   },
 ];
 
 export default function Page() {
+  const githubUrl = DATA.contact.social.GitHub?.url;
+  const telegramUrl = DATA.contact.social.Telegram?.url;
+
   return (
     <main className="space-y-24">
-
-      {/* ── HERO ─────────────────────────────────────────── */}
       <section
         id="hero"
-        className="grid lg:grid-cols-[1fr_auto] gap-10 lg:gap-16 items-center min-h-[calc(100svh-5rem)] pt-4"
+        className="relative overflow-hidden rounded-[8px] border border-border bg-card px-5 py-8 shadow-2xl shadow-black/10 sm:px-8 lg:px-10 lg:py-12"
       >
-        <div className="flex flex-col">
-          {/* Availability badge */}
-          <BlurFade delay={D} blur="0px" yOffset={10}>
-            <div className="inline-flex items-center gap-2 text-xs text-muted-foreground mb-6 w-fit px-3 py-1.5 rounded-full border border-border bg-secondary/50">
-              <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              Open to full-time roles &amp; freelance projects
-            </div>
-          </BlurFade>
+        <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:linear-gradient(to_right,currentColor_1px,transparent_1px),linear-gradient(to_bottom,currentColor_1px,transparent_1px)] [background-size:48px_48px]" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-300/70 to-transparent" />
 
-          {/* Name */}
-          <BlurFade delay={D * 2} blur="0px" yOffset={14}>
-            <h1 className="text-5xl sm:text-7xl xl:text-8xl font-black italic uppercase tracking-tighter leading-[0.85] mb-4 text-foreground">
-              {DATA.name.split(" ").map((word, i) => (
-                <span key={i} className="block">{word}</span>
-              ))}
-            </h1>
-          </BlurFade>
-
-          {/* Role pills */}
-          <BlurFade delay={D * 3} blur="0px" yOffset={8}>
-            <div className="flex flex-wrap gap-2 mb-5">
-              {ROLES.map((r) => (
-                <span
-                  key={r}
-                  className="px-3 py-1 text-xs rounded-full border border-border bg-secondary text-secondary-foreground font-medium"
-                >
-                  {r}
+        <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-center">
+          <div>
+            <BlurFade delay={D} blur="0px" yOffset={10}>
+              <div className="mb-7 flex flex-wrap items-center gap-3">
+                <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1.5 text-xs font-semibold text-emerald-700 dark:text-emerald-200">
+                  <span className="size-1.5 rounded-full bg-emerald-400" />
+                  Open to full-time roles and contract work
                 </span>
-              ))}
-            </div>
-          </BlurFade>
-
-          {/* Summary */}
-          <BlurFade delay={D * 4} blur="0px" yOffset={6}>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-8 max-w-lg">
-              {DATA.summary}
-            </p>
-          </BlurFade>
-
-          {/* Stats row */}
-          <BlurFade delay={D * 5} blur="0px" yOffset={6}>
-            <div className="flex items-center gap-6 mb-8">
-              <div>
-                <p className="text-2xl font-black text-foreground tabular-nums">5+</p>
-                <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">Years Exp.</p>
+                <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-3 py-1.5 text-xs font-medium text-muted-foreground">
+                  <MapPin className="size-3.5" />
+                  Remote friendly
+                </span>
               </div>
-              <div className="w-px h-8 bg-border" />
-              <div>
-                <p className="text-2xl font-black text-foreground tabular-nums">25+</p>
-                <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">Projects</p>
-              </div>
-              <div className="w-px h-8 bg-border" />
-              <div>
-                <p className="text-2xl font-black text-foreground tabular-nums">8+</p>
-                <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">Companies</p>
-              </div>
-            </div>
-          </BlurFade>
+            </BlurFade>
 
-          {/* CTAs */}
-          <BlurFade delay={D * 6} blur="0px" yOffset={6}>
-            <div className="flex items-center gap-3 flex-wrap">
-              <Link
-                href="#projects"
-                className="inline-flex items-center px-5 py-2.5 rounded-full bg-foreground text-background text-xs font-bold hover:opacity-80 transition-opacity"
-              >
-                View Work →
-              </Link>
-              <Link
-                href="#contact"
-                className="inline-flex items-center px-5 py-2.5 rounded-full border border-border text-xs font-medium text-muted-foreground hover:text-foreground hover:border-foreground/40 transition-colors"
-              >
-                Get in Touch
-              </Link>
-              <Link
-                href={`mailto:${DATA.contact.email}`}
-                className="inline-flex items-center px-5 py-2.5 rounded-full border border-border text-xs font-medium text-muted-foreground hover:text-foreground hover:border-foreground/40 transition-colors"
-              >
-                Email Me
-              </Link>
-            </div>
-          </BlurFade>
-        </div>
+            <BlurFade delay={D * 2} blur="0px" yOffset={14}>
+              <p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-muted-foreground">
+                {DATA.name}
+              </p>
+              <h1 className="max-w-5xl text-4xl font-black uppercase italic leading-[0.9] tracking-tighter text-foreground sm:text-6xl lg:text-7xl xl:text-8xl">
+               Yohannes Getachew
+              </h1>
+            </BlurFade>
 
-        {/* Avatar — desktop only */}
-        <BlurFade delay={D * 3} blur="0px" yOffset={20}>
-          <div className="relative hidden lg:flex items-center justify-center">
-            <div className="relative size-72 flex items-center justify-center">
-              <div className="absolute inset-0 rounded-full border border-border/20 scale-[1.15]" />
-              <div className="absolute inset-0 rounded-full border border-border/10 scale-[1.32]" />
-              <div className="size-64 rounded-full overflow-hidden ring-2 ring-border">
+            <BlurFade delay={D * 3} blur="0px" yOffset={8}>
+              <p className="mt-6 max-w-3xl text-base leading-8 text-muted-foreground sm:text-lg">
+                I help teams turn complex technical ideas into shipped products: from LLM workflows and full-stack apps to blockchain systems and product delivery.
+              </p>
+            </BlurFade>
+
+            <BlurFade delay={D * 4} blur="0px" yOffset={8}>
+              <div className="mt-7 flex flex-wrap gap-2">
+                {ROLE_TAGS.map((role) => (
+                  <span
+                    key={role}
+                    className="rounded-full border border-border bg-background/70 px-3 py-1.5 text-xs font-semibold text-secondary-foreground"
+                  >
+                    {role}
+                  </span>
+                ))}
+              </div>
+            </BlurFade>
+
+            <BlurFade delay={D * 5} blur="0px" yOffset={8}>
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <Link
+                  href={`mailto:${DATA.contact.email}`}
+                  className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-bold text-background shadow-lg shadow-foreground/10 transition-transform hover:-translate-y-0.5"
+                >
+                  Email me
+                  <Mail className="size-4" />
+                </Link>
+                <Link
+                  href="#projects"
+                  className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:border-foreground/40"
+                >
+                  See projects
+                  <ArrowUpRight className="size-4" />
+                </Link>
+                {githubUrl && (
+                  <Link
+                    href={githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-5 py-3 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    GitHub
+                    <ArrowUpRight className="size-4" />
+                  </Link>
+                )}
+              </div>
+            </BlurFade>
+          </div>
+
+          <BlurFade delay={D * 4} blur="0px" yOffset={16}>
+            <aside className="rounded-[8px] border border-border bg-background/70 p-4 shadow-xl shadow-black/10">
+              <div className="flex items-center gap-4 border-b border-border pb-4">
                 <Image
                   src={DATA.avatarUrl}
                   alt={DATA.name}
-                  width={280}
-                  height={280}
-                  className="w-full h-full object-cover"
+                  width={88}
+                  height={88}
+                  className="size-20 rounded-[8px] border border-border object-cover"
                   priority
                 />
+                <div>
+                  <p className="text-base font-black uppercase italic tracking-tight text-foreground">
+                  About me
+                  </p>
+                  <p className="mt-1 text-xs leading-5 text-muted-foreground">
+                    Engineering execution with product judgment.
+                  </p>
+                </div>
               </div>
-            </div>
-          </div>
-        </BlurFade>
+
+              <div className="grid grid-cols-3 border-b border-border py-4">
+                {HERO_METRICS.map((metric) => (
+                  <div key={metric.label} className="border-r border-border px-3 first:pl-0 last:border-r-0">
+                    <p className="text-2xl font-black tracking-tighter text-foreground tabular-nums">
+                      {metric.value}
+                    </p>
+                    <p className="mt-1 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+                      {metric.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="space-y-3 pt-4">
+                {RECRUITER_SIGNALS.map((item) => (
+                  <div key={item.label} className="flex gap-3">
+                    <div className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-[8px] border border-border bg-secondary/50">
+                      <item.icon className="size-4 text-foreground" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-wide text-foreground">
+                        {item.label}
+                      </p>
+                      <p className="mt-1 text-xs leading-5 text-muted-foreground">
+                        {item.value}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </aside>
+          </BlurFade>
+        </div>
       </section>
 
-      {/* ── EXPERIENCE ───────────────────────────────────── */}
+      <section id="fit">
+        <BlurFade delay={D} blur="0px" yOffset={8} inView>
+          <div className="mb-8 flex flex-col justify-between gap-4 border-y border-border py-6 sm:flex-row sm:items-end">
+            <div>
+              <p className="mb-2 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+                01 - Why hire me
+              </p>
+              <h2 className="text-4xl font-black uppercase italic leading-none tracking-tighter text-foreground sm:text-5xl">
+                Role fit
+              </h2>
+            </div>
+            <p className="max-w-xl text-sm leading-7 text-muted-foreground">
+              A compact mix of senior engineering, product ownership, and AI/Web3 execution.
+            </p>
+          </div>
+        </BlurFade>
+
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {FOCUS_AREAS.map((area, id) => (
+            <BlurFade key={area.title} delay={D * (id + 1)} blur="0px" yOffset={8} inView>
+              <div className="h-full rounded-[8px] border border-border bg-card p-5">
+                <div className="mb-5 flex size-10 items-center justify-center rounded-[8px] border border-border bg-secondary/60">
+                  <area.icon className="size-5 text-foreground" />
+                </div>
+                <h3 className="text-lg font-black uppercase italic tracking-tight text-foreground">
+                  {area.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                  {area.text}
+                </p>
+              </div>
+            </BlurFade>
+          ))}
+        </div>
+      </section>
+
       <section id="work">
         <BlurFade delay={D} blur="0px" yOffset={8} inView>
-          <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-2">
-            02 — Experience
-          </p>
-          <h2 className="text-4xl sm:text-5xl font-black italic uppercase tracking-tighter leading-none text-foreground mb-10">
-            Work History
-          </h2>
+          <div className="mb-8 flex flex-col justify-between gap-4 border-y border-border py-6 sm:flex-row sm:items-end">
+            <div>
+              <p className="mb-2 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+                02 - Experience
+              </p>
+              <h2 className="text-4xl font-black uppercase italic leading-none tracking-tighter text-foreground sm:text-5xl">
+                Work history
+              </h2>
+            </div>
+            <p className="max-w-xl text-sm leading-7 text-muted-foreground">
+              Recent roles focused on shipping production software, leading teams, and managing technical delivery.
+            </p>
+          </div>
         </BlurFade>
-        <div>
+
+        <div className="space-y-1">
           {DATA.work.map((work, id) => (
-            <BlurFade key={work.company} delay={D * (id * 0.5 + 1)} blur="0px" yOffset={6} inView>
+            <BlurFade key={work.company} delay={D * (id * 0.35 + 1)} blur="0px" yOffset={6} inView>
               <ResumeCard
                 logoUrl={work.logoUrl}
                 altText={work.company}
@@ -185,132 +280,117 @@ export default function Page() {
                 subtitle={work.title}
                 href={work.href}
                 badges={work.badges}
-                period={`${work.start} – ${work.end ?? "Present"}`}
+                period={`${work.start} - ${work.end ?? "Present"}`}
                 description={work.description}
+                isLast={id === DATA.work.length - 1}
               />
             </BlurFade>
           ))}
-          <div className="border-t border-border mt-2" />
         </div>
       </section>
 
-      {/* ── EDUCATION ────────────────────────────────────── */}
-      <section id="education">
-        <BlurFade delay={D} blur="0px" yOffset={8} inView>
-          <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-2">
-            03 — Education
-          </p>
-          <h2 className="text-4xl sm:text-5xl font-black italic uppercase tracking-tighter leading-none text-foreground mb-10">
-            Education
-          </h2>
-        </BlurFade>
-        <div>
-          {DATA.education.map((edu, id) => (
-            <BlurFade key={edu.school} delay={D * (id * 0.5 + 1)} blur="0px" yOffset={6} inView>
-              <ResumeCard
-                href={edu.href}
-                logoUrl={edu.logoUrl}
-                altText={edu.school}
-                title={edu.school}
-                subtitle={edu.degree}
-                period={`${edu.start} – ${edu.end}`}
-              />
-            </BlurFade>
-          ))}
-          <div className="border-t border-border mt-2" />
-        </div>
-      </section>
-
-      {/* ── SKILLS ───────────────────────────────────────── */}
-      <section id="skills">
-        <BlurFade delay={D} blur="0px" yOffset={8} inView>
-          <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-2">
-            04 — Capabilities
-          </p>
-          <h2 className="text-4xl sm:text-5xl font-black italic uppercase tracking-tighter leading-none text-foreground mb-10">
-            Tech Stack
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
-            {SKILL_GROUPS.map((group, gi) => (
-              <BlurFade key={group.category} delay={D * (gi * 0.3 + 1)} blur="0px" yOffset={6} inView>
-                <div>
-                  <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-3 pb-2 border-b border-border">
-                    {group.category}
-                  </p>
-                  <ul className="space-y-1.5">
-                    {group.items.map((skill) => (
-                      <li key={skill} className="text-sm text-foreground font-medium">
-                        {skill}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </BlurFade>
-            ))}
-          </div>
-        </BlurFade>
-      </section>
-
-      {/* ── PROJECTS ─────────────────────────────────────── */}
       <section id="projects">
         <BlurFade delay={D} blur="0px" yOffset={8} inView>
           <MasonryProjects />
         </BlurFade>
       </section>
 
-      {/* ── CONTACT ──────────────────────────────────────── */}
+      <section id="education">
+        <BlurFade delay={D} blur="0px" yOffset={8} inView>
+          <div className="mb-8 flex flex-col justify-between gap-4 border-y border-border py-6 sm:flex-row sm:items-end">
+            <div>
+              <p className="mb-2 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+                04 - Education
+              </p>
+              <h2 className="text-4xl font-black uppercase italic leading-none tracking-tighter text-foreground sm:text-5xl">
+                Education
+              </h2>
+            </div>
+          </div>
+        </BlurFade>
+
+        <div className="space-y-1">
+          {DATA.education.map((edu, id) => (
+            <BlurFade key={edu.school} delay={D * (id * 0.35 + 1)} blur="0px" yOffset={6} inView>
+              <ResumeCard
+                href={edu.href}
+                logoUrl={edu.logoUrl}
+                altText={edu.school}
+                title={edu.school}
+                subtitle={edu.degree}
+                period={`${edu.start} - ${edu.end}`}
+                isLast={id === DATA.education.length - 1}
+              />
+            </BlurFade>
+          ))}
+        </div>
+      </section>
+
       <section id="contact" className="pb-4">
         <BlurFade delay={D} blur="0px" yOffset={8} inView>
-          <div className="relative rounded-2xl border border-border overflow-hidden">
-            <div className="pointer-events-none absolute -top-20 -left-20 size-60 rounded-full bg-violet-500/10 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-20 -right-20 size-60 rounded-full bg-cyan-500/10 blur-3xl" />
+          <div className="relative overflow-hidden rounded-[8px] border border-border bg-card p-6 sm:p-8 lg:p-10">
+            <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(to_right,currentColor_1px,transparent_1px),linear-gradient(to_bottom,currentColor_1px,transparent_1px)] [background-size:42px_42px]" />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-300/70 to-transparent" />
 
-            <div className="relative z-10 px-8 py-20 lg:py-24">
-              <div className="max-w-xl">
-                <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-4">
-                  06 — Hire Me
+            <div className="relative grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+              <div>
+                <p className="mb-3 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+                  05 - Hire me
                 </p>
-                <h2 className="text-4xl sm:text-5xl font-black italic uppercase tracking-tighter leading-[0.9] mb-4 text-foreground">
-                  Looking for a strong engineer or PM?
+                <h2 className="max-w-3xl text-4xl font-black uppercase italic leading-[0.9] tracking-tighter text-foreground sm:text-5xl lg:text-6xl">
+                  Looking for an engineer who can own both product and code?
                 </h2>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-8 max-w-sm">
-                  I&apos;m available for full-time roles, contract work, and technical consulting across AI engineering, full-stack, blockchain, and product management.
+                <p className="mt-5 max-w-2xl text-sm leading-7 text-muted-foreground">
+                  I&apos;m available for full-time roles, contract builds, and technical consulting across AI engineering, full-stack, blockchain, and product delivery.
                 </p>
+              </div>
 
-                <div className="flex flex-wrap gap-3 mb-8">
+              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+                <Link
+                  href={`mailto:${DATA.contact.email}`}
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-bold text-background transition-transform hover:-translate-y-0.5"
+                >
+                  {DATA.contact.email}
+                  <ArrowUpRight className="size-4" />
+                </Link>
+                <div className="flex gap-3">
                   <Link
-                    href={`mailto:${DATA.contact.email}`}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-foreground text-background text-sm font-bold hover:opacity-80 transition-opacity"
-                  >
-                    {DATA.contact.email} →
-                  </Link>
-                  <Link
-                    href={`https://wa.me/251938321124`}
+                    href="https://wa.me/251938321124"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"
                   >
                     WhatsApp
                   </Link>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  {Object.entries(DATA.contact.social)
-                    .filter(([, s]) => s.navbar)
-                    .map(([name, social]) => (
-                      <Link
-                        key={name}
-                        href={social.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={name}
-                        className="size-10 rounded-xl border border-border bg-secondary/40 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-200"
-                      >
-                        <social.icon className="size-4" />
-                      </Link>
-                    ))}
+                  {telegramUrl && (
+                    <Link
+                      href={telegramUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      Telegram
+                    </Link>
+                  )}
                 </div>
               </div>
+            </div>
+
+            <div className="relative mt-8 flex flex-wrap gap-3 border-t border-border pt-6">
+              {Object.entries(DATA.contact.social)
+                .filter(([, social]) => social.navbar)
+                .map(([name, social]) => (
+                  <Link
+                    key={name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={name}
+                    className="flex size-10 items-center justify-center rounded-[8px] border border-border bg-secondary/40 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+                  >
+                    <social.icon className="size-4" />
+                  </Link>
+                ))}
             </div>
           </div>
         </BlurFade>

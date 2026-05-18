@@ -60,7 +60,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <TooltipProvider delayDuration={0}>
             <Navbar />
-            <div className="mx-auto max-w-6xl px-6 pt-20 pb-24">
+            <div className="mx-auto max-w-6xl px-6 pt-24 pb-24 sm:px-8 lg:px-10">
               {children}
             </div>
           </TooltipProvider>

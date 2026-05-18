@@ -1,77 +1,119 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { CreativeProjectCard } from "./project-card";
 import { DATA } from "@/data/resume";
+import { AnimatePresence, motion } from "framer-motion";
+import { useMemo, useState } from "react";
+import { CreativeProjectCard } from "./project-card";
+
+type Project = (typeof DATA.projects)[number];
+
+const PROJECT_FILTERS = [
+  { label: "All", terms: [] },
+  { label: "AI", terms: ["ai", "llm", "openai", "claude", "rag", "langchain", "agent"] },
+  { label: "Full-stack", terms: ["next", "next.js", "react", "node", "full-stack", "typescript", "frontend"] },
+  { label: "Backend", terms: ["backend", "api", "fastapi", "node", "server", "postgres", "graphql", "prisma"] },
+  { label: "Web3", terms: ["cardano", "ton", "solana", "blockchain", "web3", "plutus", "wallet", "smart contract"] },
+];
+
+function getProjectSearchText(project: Project) {
+  const technologies = project.technologies as unknown as string[];
+
+  return [
+    project.title,
+    project.description,
+    project.dates,
+    ...(technologies ?? []),
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+}
+
+function projectMatches(project: Project, terms: string[]) {
+  if (terms.length === 0) return true;
+
+  const haystack = getProjectSearchText(project);
+
+  return terms.some((term) => haystack.includes(term));
+}
 
 export function KineticArchive() {
-  const [filter, setFilter] = useState("All");
+  const [filter, setFilter] = useState(PROJECT_FILTERS[0].label);
+  const activeFilter =
+    PROJECT_FILTERS.find((item) => item.label === filter) ?? PROJECT_FILTERS[0];
 
-  const allTechs = Array.from(
-    new Set(DATA.projects.flatMap((p) => p.technologies as unknown as string[]))
-  ).sort();
-  const categories = ["All", ...allTechs];
+  const filterCounts = useMemo(
+    () =>
+      PROJECT_FILTERS.reduce<Record<string, number>>((counts, item) => {
+        counts[item.label] = DATA.projects.filter((project) =>
+          projectMatches(project, item.terms)
+        ).length;
+        return counts;
+      }, {}),
+    []
+  );
 
-  const filtered =
-    filter === "All"
-      ? DATA.projects
-      : DATA.projects.filter((p) =>
-          (p.technologies as unknown as string[]).includes(filter)
-        );
+  const filtered = useMemo(
+    () =>
+      DATA.projects.filter((project) =>
+        projectMatches(project, activeFilter.terms)
+      ),
+    [activeFilter]
+  );
 
   return (
     <div className="relative">
-      {/* Header */}
-      <div className="mb-8">
-        <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-2">
-          05 — Selected Work
-        </p>
-        <h2 className="text-4xl sm:text-5xl font-black italic uppercase tracking-tighter leading-none text-foreground">
-          Projects
-        </h2>
-      </div>
-
-      {/* Filter pills — horizontally scrollable on mobile, wrapping on desktop */}
-      <div className="mb-8 overflow-x-auto scrollbar-none">
-        <div className="flex gap-2 flex-wrap min-w-max sm:min-w-0">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setFilter(cat)}
-              className={`relative shrink-0 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all duration-200 ${
-                filter === cat
-                  ? "text-background"
-                  : "text-muted-foreground hover:text-foreground border border-border hover:border-foreground/30"
-              }`}
-            >
-              <span className="relative z-10">{cat}</span>
-              {filter === cat && (
-                <motion.div
-                  layoutId="filter-pill"
-                  className="absolute inset-0 bg-foreground rounded-full"
-                  transition={{ type: "spring", bounce: 0.2, duration: 0.4 }}
-                />
-              )}
-            </button>
-          ))}
+      <div className="mb-8 flex flex-col justify-between gap-4 border-y border-border py-6 sm:flex-row sm:items-end">
+        <div>
+          <p className="mb-2 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+            03 - Selected work
+          </p>
+          <h2 className="text-4xl font-black uppercase italic leading-none tracking-tighter text-foreground sm:text-5xl">
+           Projects
+          </h2>
         </div>
+        <p className="max-w-xl text-sm leading-7 text-muted-foreground">
+          A focused set of shipped products and systems that map directly to AI, full-stack, backend, and Web3 roles.
+        </p>
       </div>
 
-      {/* Uniform 3-column grid — no gaps, no bento irregularity */}
-      <motion.div
-        layout
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
-      >
+      <div className="mb-6 flex flex-wrap gap-2">
+        {PROJECT_FILTERS.map((item) => (
+          <button
+            key={item.label}
+            type="button"
+            onClick={() => setFilter(item.label)}
+            className={`relative overflow-hidden rounded-full px-3 py-1.5 text-xs font-bold transition-colors ${
+              filter === item.label
+                ? "text-background"
+                : "border border-border text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            <span className="relative z-10">
+              {item.label}
+              <span className="ml-1 opacity-60">{filterCounts[item.label]}</span>
+            </span>
+            {filter === item.label && (
+              <motion.span
+                layoutId="project-filter"
+                className="absolute inset-0 rounded-full bg-foreground"
+                transition={{ type: "spring", bounce: 0.2, duration: 0.4 }}
+              />
+            )}
+          </button>
+        ))}
+      </div>
+
+      <motion.div layout className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence mode="popLayout">
-          {filtered.map((project, idx) => (
+          {filtered.map((project, index) => (
             <motion.div
               key={project.title}
               layout
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20, transition: { duration: 0.15 } }}
-              transition={{ delay: idx * 0.03, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              exit={{ opacity: 0, y: 18, transition: { duration: 0.15 } }}
+              transition={{ delay: index * 0.03, duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             >
               <CreativeProjectCard
                 {...(project as any)}
@@ -82,6 +124,12 @@ export function KineticArchive() {
           ))}
         </AnimatePresence>
       </motion.div>
+
+      {filtered.length === 0 && (
+        <div className="rounded-[8px] border border-border bg-card p-6 text-sm text-muted-foreground">
+          No projects found for this filter.
+        </div>
+      )}
     </div>
   );
 }

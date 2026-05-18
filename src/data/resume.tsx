@@ -11,7 +11,7 @@ export const DATA = {
     "Software Engineer | Product & Project Manager | Blockchain Developer",
   summary:
     "I'm a Software Engineer, AI Engineer, Product Manager, and Blockchain Developer with 5+ years spent building scalable full-stack apps, decentralized systems, and AI-powered products. What sets me apart is the blend: deep technical execution paired with sharp product thinking. I work across Web3, full-stack engineering, and AI systems , including hands-on LLM and AI-driven application development. From system architecture to final deployment, I lead projects and distributed teams to ship secure, reliable software that drives measurable business results.",
-  avatarUrl: "/jjj.png",
+  avatarUrl: "/meeeee.jpg",
   skills: [
     // Programming Languages
     "C++",
@@ -59,13 +59,13 @@ export const DATA = {
 
         navbar: true,
       },
-      LinkedIn: {
-        name: "LinkedIn",
-        url: "https://www.linkedin.com/in/yohannes-getachew-667a1b241/",
-        icon: Icons.linkedin,
-
-        navbar: true,
-      },
+      // LinkedIn: {
+      //   name: "LinkedIn",
+      //   url: "https://www.linkedin.com/in/yohannes-getachew-667a1b241/",
+      //   icon: Icons.linkedin,
+      //
+      //   navbar: true,
+      // },
       X: {
         name: "X",
         url: "https://x.com/yohhannees",
