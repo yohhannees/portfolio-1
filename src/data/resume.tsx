@@ -107,7 +107,7 @@ export const DATA = {
       start: "june 2025",
       end: "Present",
       description:
-        "Led a team of 5 engineers while spearheading recruitment for top Web3 and blockchain companies. Managed end-to-end hiring processes including technical assessments, coding interviews, and candidate evaluation. Oversaw smart contract audits, security testing, and development of blockchain and cryptography solutions on the blockchain, ensuring high-quality deliverables and compliance across projects.",
+        "Lead a team of 5 engineers building full-stack Web3 applications on Cardano, owning end-to-end delivery from system architecture through production deployment. Conduct smart contract security audits using Plutus and Haskell, identifying and resolving critical vulnerabilities before mainnet deployment. Manage full-cycle technical recruiting for Web3 companies, designing coding assessments, running architecture interviews, and evaluating senior engineer candidates.",
     },
     {
       company: "Endubis Blockchain Solutions",
@@ -119,7 +119,7 @@ export const DATA = {
       start: "May 2024",
       end: "Present",
       description:
-        "Led a distributed engineering team to build a secure wallet application and cryptocurrency system on the Cardano blockchain. Oversaw sprint planning, roadmap definition, and release management under Agile methodology, improving sprint efficiency by 30%. Defined on-chain and off-chain communication layers and performed security audits to ensure compliance and safety. Implemented DevOps pipelines for automated testing and deployment, increasing release reliability.",
+        "Led a distributed team of 7 engineers to build a non-custodial Cardano cryptocurrency wallet using Plutus smart contracts and a Node.js backend for UTxO and transaction management. Defined on-chain and off-chain communication architecture, integrating Cardano node APIs with backend services to handle wallet state synchronisation and transaction submission. Drove Agile delivery through sprint planning and roadmap ownership, achieving a 30% improvement in sprint velocity over six months. Performed backend API and smart contract security audits, remediating vulnerabilities to meet compliance requirements before public launch.",
     },
     {
       company: "SoundRig-United Kingdom(Remote)",
@@ -131,7 +131,7 @@ export const DATA = {
       start: "June 2023",
       end: "Present",
       description:
-        "Directed the design and development of a decentralized music and NFT platform on the Cardano blockchain. Led and mentored a team of developers while managing integrations. Engineered the NFT minting flow, metadata strategy, and marketplace connections, improving mint success rates by 25%. Introduced automated code reviews and continuous integration pipelines, enhancing delivery speed and code quality.",
+        "Architected and delivered a decentralised music and NFT marketplace on Cardano and TON blockchains; built the frontend with React and Next.js and backend APIs with Node.js. Engineered an end-to-end NFT minting pipeline with automated metadata validation and on-chain transaction management, reducing failed mint transactions by 25%. Implemented CI/CD pipelines and automated code review gates using GitHub Actions and Docker, cutting average release cycle time and reducing production regressions. Managed third-party wallet integrations (Nami, Eternl, TON Connect) and protocol connectors ensuring cross-platform compatibility.",
     },
     {
       company: "Perago Information Systems ",
@@ -143,7 +143,7 @@ export const DATA = {
       start: "June 2023",
       end: "July 2024",
       description:
-        "Collaborated on E-Service projects and developed Employee Management System modules. Gained hands-on experience in backend development, database management, and cloud deployment pipelines, while supporting seamless integration with E-Service platforms.",
+        "Built reusable React component libraries and REST/GraphQL API integrations for government-facing E-Service platforms serving thousands of daily transactions. Implemented AWS cloud deployment pipelines automating build, test, and release stages, reducing manual deployment effort by 40%.",
     },
     {
       company: "Muyalogy",
@@ -155,7 +155,7 @@ export const DATA = {
       start: "September 2023",
       end: " July 2024",
       description:
-        "Designed and developed LMS modules, including courses, tracking, and dashboards, while building scalable SaaS infrastructure with reusable APIs. Improved application performance and usability by refactoring core UI components and API logic. Collaborated closely with stakeholders to ensure product alignment and enhance user satisfaction, creating case studies, mockups, wireframes, and prototypes for apps, websites, and systems.",
+        "Built course management, learner progress tracking, and analytics dashboard modules for a SaaS LMS using React, Next.js, Node.js, and PostgreSQL. Designed a modular GraphQL API layer serving 12 frontend features, reducing data over-fetching and improving average API response time by 35%. Refactored core React components and implemented Redux state management, measurably improving Lighthouse performance scores and user-perceived load times.",
     },
     {
       company: "Dynamic Technologies",
@@ -167,7 +167,7 @@ export const DATA = {
       start: "January 2023",
       end: "June 2024",
       description:
-        "Developed backend systems for e-commerce and betting platforms using Node.js and PostgreSQL. Built custom odds APIs, authentication systems, and secure payment integrations. Optimized system performance and database queries, improving response times and scalability, while delivering shop management websites and betting platforms.",
+        "Built Node.js and PostgreSQL backend systems for e-commerce and real-time sports betting platforms handling concurrent sessions and live odds feeds. Optimised critical database queries and introduced indexing strategies, reducing average API response time from 850ms to under 200ms.",
     },
     {
       company: "Lela Tech",
@@ -176,10 +176,10 @@ export const DATA = {
       location: "Ethiopia",
       title: "Software Engineer",
       logoUrl: "/lela.jpeg",
-      start: "May 2017",
-      end: "August 2017",
+      start: "May 2024",
+      end: "November 2024",
       description:
-        "Designed and developed AI-driven and blockchain-integrated platforms, including smart contract interactions, custom APIs, and decentralized system integrations.",
+        "Built AI-driven SaaS platforms integrating Claude and OpenAI Codex APIs with Cardano smart contracts, enabling automated on-chain actions triggered by AI model outputs. Developed Python FastAPI and Node.js NestJS backend services handling AI inference, blockchain transaction broadcasting, and multi-platform webhook integrations. Deployed and audited Plutus and Solidity smart contracts verifying tokenomics, on-chain logic, and security compliance before mainnet release.",
     },
     {
       company: "Creative Codes-Saudi Arabia(Remote)",
@@ -203,7 +203,7 @@ export const DATA = {
       start: "June 2023",
       end: "Present",
       description:
-        "Led A development Team in creating a website for the Software Engineers Association and build apps for the association. and managed multiple projects for the association.",
+        "Led development of the association website and mobile apps; owned architecture, code reviews, and project roadmaps across multiple concurrent initiatives.",
     },
     {
       company: "GDG",
@@ -213,9 +213,9 @@ export const DATA = {
       title: "Project Manager-Mentor-Education Operator",
       logoUrl: "/gdgl.png",
       start: "June 2022",
-      end: " June 20205",
+      end: "June 2025",
       description:
-        "Working as an Education Operator, Project Manager and Mentor at Google Developer Student Clubs, helping students by organizing hackathons and leading projects",
+        "Planned and delivered hackathons and technical workshops; mentored 50+ students on full-stack development, project execution, and engineering careers.",
     },
   ],
   education: [
@@ -259,7 +259,7 @@ export const DATA = {
       dates: "Sep 2023 - Dec 2024",
       active: true,
       description:
-        "This project is a course-selling CMS platform specifically designed for Ethiopian customers and Amharic speakers. It offers localized solutions, including language support, region-specific payment integrations, and a user experience optimized for the target audience’s unique needs",
+        "A SaaS LMS built for Ethiopian and Amharic-speaking learners, featuring course management, learner progress tracking, and an analytics dashboard. Designed a modular GraphQL API layer serving 12 frontend features, reducing data over-fetching and improving average API response time by 35%. Implemented Redux state management and refactored core React components, measurably improving Lighthouse scores and user-perceived load times.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -289,7 +289,7 @@ export const DATA = {
       dates: "May 2024 - Present",
       active: true,
       description:
-        "A crypto wallet app operating as a mini app within Telegram, integrating both the Cardano and TON blockchains. It utilizes the Blockfrost API and smart contracts on a Cardano node, alongside TON’s blockchain infrastructure, to facilitate secure and efficient cryptocurrency transactions. The development focuses on blockchain backend integration and project management, ensuring seamless functionality and an optimized user experience.",
+        "A non-custodial crypto wallet running as a Telegram mini app, integrating Cardano and TON blockchains. Built with Plutus smart contracts and a Node.js backend for UTxO and transaction management, using the Blockfrost API for Cardano node communication. Handles wallet state synchronisation, transaction submission, and on-chain/off-chain communication with a focus on security compliance before public launch.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -324,7 +324,7 @@ export const DATA = {
       dates: "April 2023 - Present",
       active: true,
       description:
-        "A music-selling platform that converts tracks into NFTs, enabling artists to easily mint and sell their music as digital assets. The platform is designed to provide a seamless user experience, integrating blockchain technology for secure ownership and transactions. Development involves full-stack implementation and project management to ensure a robust and scalable solution for musicians.",
+        "A decentralised music and NFT marketplace on Cardano and TON blockchains, built with React, Next.js, and Node.js. Features an end-to-end NFT minting pipeline with automated metadata validation and on-chain transaction management, reducing failed mint transactions by 25%. Supports third-party wallet integrations including Nami, Eternl, and TON Connect, with CI/CD pipelines via GitHub Actions and Docker for reliable releases.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -354,7 +354,7 @@ export const DATA = {
       dates: "September 2023  - December 2024",
       active: true,
       description:
-        "A SaaS platform similar to Thinkific and Teachable, enabling companies to sell courses and manage students efficiently. It offers features such as customizable landing pages and virtual classrooms, designed to create a personalized and interactive learning experience. The platform is built to provide seamless course management, student engagement, and scalability for businesses in the education sector.",
+        "A white-label SaaS platform in the vein of Thinkific and Teachable, enabling businesses to sell courses, manage students, and build virtual classrooms with customizable landing pages. Architected for multi-tenancy and scalability, with Mux-powered video delivery, Chapa payment integration, and a visual page builder (Puck) for zero-code customisation.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -413,7 +413,7 @@ export const DATA = {
       dates: "September 2024  - january 2024",
       active: true,
       description:
-        "StockSavvy is a smart inventory management platform built for modern retailers, combining stock tracking, sales, and lending with powerful analytics. Currently tested and running in over 10 real shops across Addis Ababa, it’s proven to streamline operations and boost business growth. Make smarter, data-driven decisions with confidence.",
+        "A smart inventory management platform combining stock tracking, sales, lending, and analytics for modern retailers. Live in 10+ real shops across Addis Ababa, it streamlines daily operations and surfaces actionable business insights, helping owners make data-driven decisions with confidence.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -440,7 +440,7 @@ export const DATA = {
       dates: "September 2024  - january 2024",
       active: true,
       description:
-        "Creative Code is a web application designed to help users create and manage their own coding projects. It offers a user-friendly interface for users to create, edit, and save their code snippets, as well as a feature to share their projects with others. The application is built using Next.js and TailwindCSS, making it easy to customize and integrate with other projects.",
+        "A collaborative coding environment where users can create, edit, save, and share code snippets. Built as a showcase of interactive UI patterns and real-time state management, with a clean editor experience for developers of all levels.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -467,7 +467,7 @@ export const DATA = {
       dates: "march 2024  - may 2025",
       active: true,
       description:
-        "Transform your file management experience with our AI-powered desktop application, designed to help you search and retrieve files using natural language and semantic understanding.SemanticFinder was developed to address the limitations of traditional file management systems, combining AI-powered semantic search with local file indexing.",
+        "A desktop application that replaces keyword search with natural-language, semantics-first file retrieval. Built with Rust and Tauri for native performance, it indexes files locally into a LanceDB vector store and uses AI embeddings to surface the most relevant results, with no cloud dependency or privacy trade-off.",
       technologies: ["Rust", "Tauri", "Shadcn", "ReactJs", "LanceDb"],
       links: [
         {
@@ -480,12 +480,12 @@ export const DATA = {
       video: "",
     },
     {
-      title: "Endubis Journey",
+      title: "Journey AI - Travel Companion",
       href: "https://endubis-journey.vercel.app/",
       dates: "2024",
       active: true,
       description:
-        "A landing page showcasing the Endubis ecosystem and blockchain journey, featuring modern design and interactive elements.",
+        "An AI-powered travel companion app that helps users plan trips, discover destinations, and get real-time recommendations through a conversational interface. Integrates LLM-based itinerary generation, flight and hotel search, and contextual travel tips personalised to the user's preferences and budget.",
       technologies: [
         "Next.js",
         "TypeScript",
@@ -508,7 +508,7 @@ export const DATA = {
       dates: "2024",
       active: true,
       description:
-        "A modern web application built with contemporary design principles and responsive user interface.",
+        "A brand and marketing web application built with a clean, modern design system, responsive across devices and optimised for conversion with purposeful layout and motion.",
       technologies: [
         "Next.js",
         "TypeScript",
@@ -531,7 +531,7 @@ export const DATA = {
       dates: "2024",
       active: true,
       description:
-        "We provide BHA-licensed syndicate management services and ownership opportunities across both codes in the UK, Ireland, and Europe. Whether you're a breeder, trainer, existing or aspiring owner — we manage syndicates at every level.",
+        "We provide BHA-licensed syndicate management services and ownership opportunities across both codes in the UK, Ireland, and Europe. Whether you're a breeder, trainer, existing or aspiring owner, we manage syndicates at every level.",
       technologies: [
         "Next.js",
         "TypeScript",
@@ -554,7 +554,7 @@ export const DATA = {
       dates: "2024",
       active: true,
       description:
-        "Provable Systems is a blockchain-based platform that provides a range of services for businesses looking to integrate blockchain technology into their operations. We offer a range of services including blockchain consulting, blockchain development, and blockchain integration.",
+        "A blockchain consultancy platform helping businesses design and integrate on-chain systems, covering smart contract development, tokenomics auditing, and end-to-end blockchain strategy for teams entering Web3.",
       technologies: [
         "Next.js",
         "TypeScript",
@@ -577,7 +577,7 @@ export const DATA = {
       dates: "2024",
       active: true,
       description:
-        "The official Endubis platform, providing comprehensive blockchain and cryptocurrency services with a focus on user-friendly interface.",
+        "The official Endubis platform offering end-to-end blockchain and cryptocurrency services including wallet infrastructure, smart contract deployment, tokenomics design, and on-chain transaction management, built on Cardano with a focus on accessibility for African users.",
       technologies: [
         "Next.js",
         "TypeScript",
@@ -600,7 +600,7 @@ export const DATA = {
       dates: "2024",
       active: true,
       description:
-        "A creative studio platform showcasing innovative design and development work with modern web technologies.",
+        "A creative studio portfolio platform built to present design and development work with editorial flair, featuring immersive layouts, rich media, and motion-forward presentation for agencies and independent creators.",
       technologies: [
         "Next.js",
         "TypeScript",
@@ -623,7 +623,7 @@ export const DATA = {
       dates: "2024",
       active: true,
       description:
-        "A modern web application focused on mindfulness and mental wellness with an intuitive user interface.",
+        "A mindfulness and mental wellness app with guided exercises, mood tracking, and a calm, distraction-free UI designed to encourage daily practice and self-reflection.",
       technologies: [
         "Next.js",
         "TypeScript",

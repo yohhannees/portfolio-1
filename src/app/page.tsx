@@ -116,7 +116,7 @@ export default function Page() {
                   Projects
                 </p>
                 <p className="text-2xl font-bold text-foreground tabular-nums">
-                  15+
+                  25+
                 </p>
               </div>
 
