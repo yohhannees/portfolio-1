@@ -338,7 +338,7 @@ export default function Page() {
                   05 - Hire me
                 </p>
                 <h2 className="max-w-3xl text-4xl font-black uppercase italic leading-[0.9] tracking-tighter text-foreground sm:text-5xl lg:text-6xl">
-                  Looking for an engineer who can own both product and code?
+                  Looking for an engineer who can own both  product & code?
                 </h2>
                 <p className="mt-5 max-w-2xl text-sm leading-7 text-muted-foreground">
                   I&apos;m available for full-time roles, contract builds, and technical consulting across AI engineering, full-stack, blockchain, and product delivery.
