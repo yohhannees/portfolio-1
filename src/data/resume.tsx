@@ -261,6 +261,91 @@ export const DATA = {
   ],
   projects: [
     {
+      title: "Inbox Intelligence AI Agent",
+      href: "https://github.com/yohhannees/Inbox-Intelligence-AI-Agent",
+      dates: "2026",
+      active: true,
+      description:
+        "A local-first Python AI agent that connects Telegram, Gmail, Slack, and demo sources into one prioritized Streamlit digest. Built with explicit LangGraph nodes, pluggable connectors, SQLite storage, structured LLM outputs, provider switching across Claude, Gemini, OpenAI, and Ollama, plus a no-key demo mode for quick testing.",
+      technologies: [
+        "Python",
+        "Streamlit",
+        "LangGraph",
+        "SQLite",
+        "Claude",
+        "Gemini",
+        "OpenAI",
+        "Ollama",
+        "Telethon",
+        "Gmail API",
+        "Slack API",
+      ],
+      links: [
+        {
+          type: "GitHub",
+          href: "https://github.com/yohhannees/Inbox-Intelligence-AI-Agent",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/inbox-intelligence.png",
+      video: "",
+    },
+    {
+      title: "RecruiterAssist",
+      href: "https://github.com/yohhannees/RecruiterAssist",
+      dates: "2026",
+      active: true,
+      description:
+        "An evidence-based hiring assistant that turns job descriptions and interview transcripts into per-requirement evidence cards with direct citations. The app keeps the hiring decision with the recruiter while using Claude to parse requirements, grade coverage, generate follow-up questions, and export auditable Markdown and PDF scorecards.",
+      technologies: [
+        "Python",
+        "Streamlit",
+        "Claude Sonnet",
+        "SQLite",
+        "Pydantic",
+        "ReportLab",
+        "AI Analysis",
+        "PDF Export",
+      ],
+      links: [
+        {
+          type: "GitHub",
+          href: "https://github.com/yohhannees/RecruiterAssist",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/recruiterassist.png",
+      video: "",
+    },
+    {
+      title: "Beyond ERP",
+      href: "https://beyond-erp.vercel.app/",
+      dates: "2026",
+      active: true,
+      description:
+        "A sector-aware ERP workspace for Ethiopian companies, covering sales, stock, payroll, finance, and reports. Designed around NBE compliance, 15% VAT workflows, offline-first operation, multilingual teams, sector-specific modules, and fast onboarding for retail, manufacturing, agriculture, construction, healthcare, education, and more.",
+      technologies: [
+        "ERP",
+        "SaaS",
+        "Offline-first",
+        "VAT Reports",
+        "NBE Compliance",
+        "Finance",
+        "Payroll",
+        "Inventory",
+        "Vercel",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://beyond-erp.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/beyond-erp.png",
+      video: "",
+    },
+    {
       title: "Muyalogy",
       href: "https://www.muyalogy.com/",
       dates: "Sep 2023 - Dec 2024",

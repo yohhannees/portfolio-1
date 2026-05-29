@@ -10,31 +10,34 @@ type Project = (typeof DATA.projects)[number];
 const PROJECT_FILTERS = [
   { label: "All", terms: [] },
   { label: "AI", terms: ["ai", "llm", "openai", "claude", "rag", "langchain", "agent"] },
-  { label: "Full-stack", terms: ["next", "next.js", "react", "node", "full-stack", "typescript", "frontend"] },
-  { label: "Backend", terms: ["backend", "api", "fastapi", "node", "server", "postgres", "graphql", "prisma"] },
+  { label: "Full-stack", terms: ["next", "next.js", "react", "node", "node.js", "full-stack", "typescript", "frontend"] },
+  { label: "Backend", terms: ["backend", "api", "fastapi", "node", "node.js", "server", "postgres", "postgresql", "graphql", "prisma"] },
   { label: "Web3", terms: ["cardano", "ton", "solana", "blockchain", "web3", "plutus", "wallet", "smart contract"] },
 ];
+
+function normalizeSearchText(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
 
 function getProjectSearchText(project: Project) {
   const technologies = project.technologies as unknown as string[];
 
-  return [
+  return normalizeSearchText([
     project.title,
     project.description,
     project.dates,
     ...(technologies ?? []),
   ]
     .filter(Boolean)
-    .join(" ")
-    .toLowerCase();
+    .join(" "));
 }
 
 function projectMatches(project: Project, terms: string[]) {
   if (terms.length === 0) return true;
 
-  const haystack = getProjectSearchText(project);
+  const haystack = ` ${getProjectSearchText(project)} `;
 
-  return terms.some((term) => haystack.includes(term));
+  return terms.some((term) => haystack.includes(` ${normalizeSearchText(term)} `));
 }
 
 export function KineticArchive() {
